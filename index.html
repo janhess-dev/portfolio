@@ -1,41 +1,228 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jan Hess</title>
-    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+          rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+    <div class="page-flow">
+        <header class="hero">
+            <div class="hero-background"></div>
+            <div class="hero-overlay"></div>
 
-    <main>
-        <h1>Jan Hess</h1>
-        <p>Portfolio � Work in Progress</p>
+            <div class="glow glow-1"></div>
+            <div class="glow glow-2"></div>
+            <div class="glow glow-3"></div>
 
-        <section>
-            <h2>Status</h2>
-            <p>
-                Diese Seite befindet sich aktuell im Aufbau.
-            </p>
-        </section>
+            <div class="hero-content">
+                <a href="#" id="goStatusContact" class="hero-status"><span class="status-dot"></span> Available for work</a>
+                <h1 class="hero-name">Jan Heß</h1>
+                <p class="hero-role"><span>Aspiring Developer</span> · Gaming Inspired</p>
 
-        <section>
-            <h2>Fokus</h2>
-            <p>
-                Aktuell arbeite ich an Projekten mit C# und .NET.
-            </p>
-        </section>
+                <h2 class="hero-title">
+                    I build <span>interactive web experiences</span><br />
+                    with a focus on performance,<br />
+                    usability,<br />
+                    and gaming-inspired logic.
+                </h2>
 
-        <section>
-            <h2>Kontakt</h2>
-            <p>
-                GitHub:
-                <a href="https://github.com/janhess-dev" target="_blank">
-                    github.com/janhess-dev
-                </a>
-            </p>
-        </section>
-    </main>
+                <p class="hero-text">
+                    I enjoy optimizing systems, improving performance, and building user-friendly interfaces.<br />
+                    I'm especially interested in projects that combine efficient code with game-inspired logic.
+                </p>
 
+                <div class="hero-buttons">
+                    <a href="#" id="goProjects" class="btn btn-primary">View Projects</a>
+                    <a href="#" id="goContact" class="btn btn-secondary">Contact</a>
+                </div>
+
+                <div class="stats">
+                    <div class="stat-card">
+                        <strong>Performance</strong>
+                        <span>Optimizing for smooth and responsive experiences</span>
+                    </div>
+                    <div class="stat-card">
+                        <strong>Usability</strong>
+                        <span>Building interfaces that feel intuitive and clear</span>
+                    </div>
+                    <div class="stat-card">
+                        <strong>Gaming Mindset</strong>
+                        <span>Inspired by systems, logic, and player-focused design</span>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <main>
+            <div class="lower-flow">
+                <section id="projects" class="projects-section">
+                    <div class="section-header">
+                        <p class="section-label">Projects</p>
+                        <h2>Selected work and ongoing ideas</h2>
+                        <p class="section-text">
+                            A selection of projects that reflect my focus on performance, usability,
+                            and gaming-inspired thinking.
+                        </p>
+                    </div>
+
+                    <div class="projects-grid">
+                        <article class="project-card">
+                            <div class="project-tag">Featured</div>
+                            <h3>This Portfolio</h3>
+                            <p>
+                                A personal portfolio focused on clean layout, strong visual hierarchy,
+                                and gaming-inspired UI details built with HTML and CSS.
+                            </p>
+
+                            <div class="project-stack">
+                                <span>HTML</span>
+                                <span>CSS</span>
+                                <span>UI Design</span>
+                            </div>
+
+                            <div class="project-links">
+                                <a href="#">Live Preview</a>
+                                <a href="#">Source Code</a>
+                            </div>
+                        </article>
+
+                        <article class="project-card">
+                            <div class="project-tag">Concept</div>
+                            <h3>Game UI Concept</h3>
+                            <p>
+                                Built a responsive UI system with focus on layout clarity and performance…
+                            </p>
+
+                            <div class="project-stack">
+                                <span>UI/UX</span>
+                                <span>Frontend</span>
+                                <span>Gaming Inspired</span>
+                            </div>
+
+                            <div class="project-links">
+                                <a href="#">Preview</a>
+                                <a href="#">Details</a>
+                            </div>
+                        </article>
+
+                        <article class="project-card">
+                            <div class="project-tag">In Progress</div>
+                            <h3>Combat Logic Prototype</h3>
+                            <p>
+                                An experimental project focused on system logic, interaction flow, and
+                                performance-oriented thinking inspired by combat and gameplay mechanics.
+                            </p>
+
+                            <div class="project-stack">
+                                <span>Logic</span>
+                                <span>Systems</span>
+                                <span>Performance</span>
+                            </div>
+
+                            <div class="project-links">
+                                <a href="#">Overview</a>
+                                <a href="#">Progress</a>
+                            </div>
+                        </article>
+                    </div>
+                </section>
+
+                <section id="contact" class="contact-section">
+                    <div class="contact-wrapper">
+                        <div class="contact-intro">
+                            <p class="section-label">Contact</p>
+                            <h2>Let’s build something meaningful.</h2>
+                            <p class="section-text">
+                                I’m open to new opportunities, collaborations, and projects that combine
+                                performance, usability, and thoughtful design.
+                            </p>
+                        </div>
+
+                        <div class="contact-card">
+                            <p class="contact-note">
+                                Whether it’s a web project, a gaming-inspired idea, or simply a good
+                                conversation about building better experiences — feel free to reach out.
+                            </p>
+
+                            <div class="contact-links">
+                                <a href="mailto:nachrichtjh@gmail.com" class="contact-link">
+                                    <span>Email</span>
+                                    <strong>nachrichtjh@gmail.com</strong>
+                                </a>
+
+                                <a href="https://github.com/janhess-dev" target="_blank" class="contact-link">
+                                    <span>GitHub</span>
+                                    <strong>github.com/janhess-dev</strong>
+                                </a>
+
+                                <a href="#" class="contact-link">
+                                    <span>Location</span>
+                                    <strong>Germany · Remote</strong>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+
+    <button id="backToTop" aria-label="Back to top">
+        ↑
+    </button>
+
+    <script>
+        const projects = document.getElementById("projects");
+        const contact = document.getElementById("contact");
+        const goProjects = document.getElementById("goProjects");
+        const goContact = document.getElementById("goContact");
+        const btn = document.getElementById("backToTop");
+        const goStatusContact = document.getElementById("goStatusContact");
+
+        function scrollToSection(section, offset = 80) {
+            const y = section.getBoundingClientRect().top + window.scrollY - offset;
+
+            window.scrollTo({
+                top: y,
+                behavior: "smooth"
+            });
+        }
+
+        goProjects.addEventListener("click", (e) => {
+            e.preventDefault();
+            scrollToSection(projects, 80);
+        });
+
+        goContact.addEventListener("click", (e) => {
+            e.preventDefault();
+            scrollToSection(contact, 80);
+        });
+
+        window.addEventListener("scroll", () => {
+            if (window.scrollY > 400) {
+                btn.classList.add("show");
+            } else {
+                btn.classList.remove("show");
+            }
+        });
+
+        btn.addEventListener("click", () => {
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
+        });
+
+        goStatusContact.addEventListener("click", (e) => {
+            e.preventDefault();
+            scrollToSection(contact, 80);
+        });
+    </script>
 </body>
 </html>
