@@ -6,6 +6,8 @@
     const goStatusContact = document.getElementById("goStatusContact");
     const modal = document.getElementById("imageModal");
     const modalImg = document.getElementById("modalImg");
+    const backLink = document.querySelector(".back-link");
+    const projectDetail = document.querySelector(".project-detail");
 
     function scrollToSection(section, offset = 80) {
             const y = section.getBoundingClientRect().top + window.scrollY - offset;
@@ -58,7 +60,7 @@ if (modal && modalImg) {
     document.querySelectorAll(".zoomable-image").forEach(img => {
         img.addEventListener("click", () => {
             modal.classList.add("show");
-            modalImg.src = img.src;
+            modalImg.src = img.dataset.full || img.src;
             modalImg.alt = img.alt;
             document.body.style.overflow = "hidden";
         });
@@ -74,5 +76,18 @@ if (modal && modalImg) {
             modal.classList.remove("show");
             document.body.style.overflow = "";
         }
+    });
+}
+
+if (backLink && projectDetail) {
+    backLink.addEventListener("click", (e) => {
+        e.preventDefault();
+
+        projectDetail.classList.remove("page-enter");
+        projectDetail.classList.add("page-exit-back");
+
+        setTimeout(() => {
+            window.location.href = backLink.href;
+        }, 420);
     });
 }
