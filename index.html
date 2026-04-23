@@ -33,8 +33,8 @@
                 </h2>
 
                 <p class="hero-text">
-                    I enjoy optimizing systems, improving performance, and building user-friendly interfaces.<br />
-                    I'm especially interested in projects that combine efficient code with game-inspired logic.
+                    I enjoy building interfaces that feel clear, responsive, and easy to use.<br />
+                    I'm especially interested in projects where performance, structure, and game-inspired thinking come together.
                 </p>
 
                 <div class="hero-buttons">
@@ -74,60 +74,46 @@
                     <div class="projects-grid">
                         <article class="project-card">
                             <div class="project-tag">Featured</div>
-                            <h3>This Portfolio</h3>
+                            <h3>Portfolio Website</h3>
                             <p>
-                                A personal portfolio focused on clean layout, strong visual hierarchy,
-                                and gaming-inspired UI details built with HTML and CSS.
+                                A personal portfolio built to showcase projects with a clear structure, strong performance, and intuitive user experience.
                             </p>
 
                             <div class="project-stack">
                                 <span>HTML</span>
                                 <span>CSS</span>
-                                <span>UI Design</span>
-                            </div>
-
-                            <div class="project-links">
-                                <a href="#">Live Preview</a>
-                                <a href="#">Source Code</a>
-                            </div>
-                        </article>
-
-                        <article class="project-card">
-                            <div class="project-tag">Concept</div>
-                            <h3>Game UI Concept</h3>
-                            <p>
-                                Built a responsive UI system with focus on layout clarity and performance…
-                            </p>
-
-                            <div class="project-stack">
+                                <span>JS</span>
                                 <span>UI/UX</span>
-                                <span>Frontend</span>
-                                <span>Gaming Inspired</span>
                             </div>
 
                             <div class="project-links">
-                                <a href="#">Preview</a>
-                                <a href="#">Details</a>
+                                <a href="https://janhess-dev.vercel.app/">Live Preview</a>
+                                <a href="https://github.com/janhess-dev/portfolio">Source Code</a>
                             </div>
                         </article>
 
                         <article class="project-card">
-                            <div class="project-tag">In Progress</div>
-                            <h3>Combat Logic Prototype</h3>
+                            <div class="project-tag">Game Prototype</div>
+                            <div class="project-image">
+                                <img class="zoomable-image" src="drakenveil.jpg" alt="Drakenveil Screenshot">
+                            </div>
+
+
+                            <h3>Drakenveil (Game Prototype)</h3>
                             <p>
-                                An experimental project focused on system logic, interaction flow, and
-                                performance-oriented thinking inspired by combat and gameplay mechanics.
+                                A Unity-based game prototype currently in development, featuring a structured menu system, scene navigation, and audio feedback, built to explore core systems and interaction flow.
                             </p>
 
                             <div class="project-stack">
-                                <span>Logic</span>
-                                <span>Systems</span>
-                                <span>Performance</span>
+                                <span>Unity</span>
+                                <span>C#</span>
+                                <span>UI Systems</span>
+                                <span>Scene Management</span>
                             </div>
 
                             <div class="project-links">
-                                <a href="#">Overview</a>
-                                <a href="#">Progress</a>
+                                <a href="#">Coming Soon</a>
+                                <a href="drakenveil.html">Overview</a>
                             </div>
                         </article>
                     </div>
@@ -176,6 +162,9 @@
     <button id="backToTop" aria-label="Back to top">
         ↑
     </button>
+    <div id="imageModal">
+        <img id="modalImg" src="" alt="Preview">
+    </div>
     <script src="script.js"></script>
 </body>
 </html>

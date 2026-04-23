@@ -4,6 +4,8 @@
     const goContact = document.getElementById("goContact");
     const btn = document.getElementById("backToTop");
     const goStatusContact = document.getElementById("goStatusContact");
+    const modal = document.getElementById("imageModal");
+    const modalImg = document.getElementById("modalImg");
 
     function scrollToSection(section, offset = 80) {
             const y = section.getBoundingClientRect().top + window.scrollY - offset;
@@ -14,32 +16,63 @@
             });
         }
 
-        goProjects.addEventListener("click", (e) => {
+if (goProjects) {
+    goProjects.addEventListener("click", (e) => {
         e.preventDefault();
-    scrollToSection(projects, 80);
-        });
+        scrollToSection(projects, 80);
+    });
+}
 
-        goContact.addEventListener("click", (e) => {
+if (goContact) {
+    goContact.addEventListener("click", (e) => {
         e.preventDefault();
-    scrollToSection(contact, 80);
-        });
+        scrollToSection(contact, 80);
+    });
+}
 
-        window.addEventListener("scroll", () => {
-            if (window.scrollY > 400) {
-        btn.classList.add("show");
-            } else {
-        btn.classList.remove("show");
-            }
-        });
+if (btn) {
+    window.addEventListener("scroll", () => {
+        if (window.scrollY > 400) {
+            btn.classList.add("show");
+        } else {
+            btn.classList.remove("show");
+        }
+    });
 
-        btn.addEventListener("click", () => {
+    btn.addEventListener("click", () => {
         window.scrollTo({
             top: 0,
             behavior: "smooth"
         });
-        });
+    });
+}
 
-        goStatusContact.addEventListener("click", (e) => {
+if (goStatusContact) {
+    goStatusContact.addEventListener("click", (e) => {
         e.preventDefault();
-    scrollToSection(contact, 80);
+        scrollToSection(contact, 80);
+    });
+}
+
+if (modal && modalImg) {
+    document.querySelectorAll(".zoomable-image").forEach(img => {
+        img.addEventListener("click", () => {
+            modal.classList.add("show");
+            modalImg.src = img.src;
+            modalImg.alt = img.alt;
+            document.body.style.overflow = "hidden";
         });
+    });
+
+    modal.addEventListener("click", () => {
+        modal.classList.remove("show");
+        document.body.style.overflow = "";
+    });
+
+    document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape" && modal.classList.contains("show")) {
+            modal.classList.remove("show");
+            document.body.style.overflow = "";
+        }
+    });
+}
