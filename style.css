@@ -644,6 +644,11 @@ body {
         line-height: 1.75;
     }
 
+    .hero-buttons {
+        justify-content: center;
+        align-items: center;
+    }
+
     .btn {
         width: 100%;
         text-align: center;
