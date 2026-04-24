@@ -1,10 +1,10 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>Drakenveil | Jan Heß</title>
+    <title data-i18n="drakenveilPage.meta.title">Drakenveil | Jan He&szlig;</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -15,44 +15,54 @@
 
 </head>
 <body class="project-page">
+
+    <header class="site-header">
+        <nav class="topbar">
+            <div class="lang-switch" aria-label="Language switcher" data-i18n-aria-label="topbar.language_switcher">
+                <button type="button" id="langDe" class="lang-btn">DE</button>
+                <button type="button" id="langEn" class="lang-btn">EN</button>
+            </div>
+        </nav>
+    </header>
+
     <div class="page-flow">
         <main class="project-detail page-enter">
             <div class="project-detail-container">
-                <a href="index.html#projects" class="back-link">&larr; Back to portfolio</a>
+                <a href="index.html#projects" class="back-link" data-i18n="drakenveilPage.back_link">&larr; Back to portfolio</a>
 
                 <section class="project-hero">
                     <div class="project-hero-copy">
-                        <p class="section-label">Game Prototype</p>
-                        <h1>Drakenveil</h1>
-                        <p class="project-detail-lead">
+                        <p class="section-label" data-i18n="drakenveilPage.hero.label">Game Prototype</p>
+                        <h1 data-i18n="drakenveilPage.hero.title">Drakenveil</h1>
+                        <p class="project-detail-lead" data-i18n="drakenveilPage.hero.lead">
                             A Unity-based game prototype currently in development, focused on menu flow,
                             scene navigation, and interaction feedback as a foundation for future gameplay systems.
                         </p>
 
                         <div class="project-stack project-stack-detail">
-                            <span>Unity</span>
-                            <span>C#</span>
-                            <span>UI Systems</span>
-                            <span>Scene Management</span>
-                            <span>Work in Progress</span>
+                            <span data-i18n="drakenveilPage.hero.stack_unity">Unity</span>
+                            <span data-i18n="drakenveilPage.hero.stack_csharp">C#</span>
+                            <span data-i18n="drakenveilPage.hero.stack_ui">UI Systems</span>
+                            <span data-i18n="drakenveilPage.hero.stack_scene">Scene Management</span>
+                            <span data-i18n="drakenveilPage.hero.stack_status">Work in Progress</span>
                         </div>
 
                         <div class="project-detail-actions">
-                            <a href="#" class="btn btn-secondary">Demo Coming Soon</a>
-                            <a href="#" class="btn btn-primary">Source Code</a>
+                            <a href="#" class="btn btn-secondary" data-i18n="drakenveilPage.hero.link_demo">Demo Coming Soon</a>
+                            <a href="#" class="btn btn-primary" data-i18n="drakenveilPage.hero.link_source">Source Code</a>
                         </div>
                     </div>
 
                     <div class="project-hero-media">
-                        <img class="zoomable-image" src="JPGs/drakenveil.jpg" alt="Drakenveil main menu screenshot" />
+                        <img class="zoomable-image" src="JPGs/drakenveil.jpg" alt="Drakenveil main menu screenshot" data-i18n-alt="drakenveilPage.hero.image_alt" />
                     </div>
                 </section>
 
                 <section class="project-section">
                     <div class="section-header">
-                        <p class="section-label">Overview</p>
-                        <h2>What this project is about</h2>
-                        <p class="section-text">
+                        <p class="section-label" data-i18n="drakenveilPage.overview.label">Overview</p>
+                        <h2 data-i18n="drakenveilPage.overview.heading">What this project is about</h2>
+                        <p class="section-text" data-i18n="drakenveilPage.overview.text">
                             Drakenveil is a dark fantasy game prototype built in Unity. At its current stage,
                             the project focuses on building a solid structural foundation through menu design,
                             scene transitions, and responsive user feedback. The goal is to create a clear and scalable
@@ -63,33 +73,33 @@
 
                 <section class="project-grid-two">
                     <article class="detail-card">
-                        <p class="section-label">Implemented</p>
-                        <h3>Current features</h3>
+                        <p class="section-label" data-i18n="drakenveilPage.implemented.label">Implemented</p>
+                        <h3 data-i18n="drakenveilPage.implemented.heading">Current features</h3>
                         <ul class="detail-list">
-                            <li>Main menu structure with multiple navigation options</li>
-                            <li>Scene management and basic screen flow</li>
-                            <li>Audio feedback for button interactions</li>
-                            <li>Dark fantasy visual direction and menu presentation</li>
+                            <li data-i18n="drakenveilPage.implemented.item_1">Main menu structure with multiple navigation options</li>
+                            <li data-i18n="drakenveilPage.implemented.item_2">Scene management and basic screen flow</li>
+                            <li data-i18n="drakenveilPage.implemented.item_3">Audio feedback for button interactions</li>
+                            <li data-i18n="drakenveilPage.implemented.item_4">Dark fantasy visual direction and menu presentation</li>
                         </ul>
                     </article>
 
                     <article class="detail-card">
-                        <p class="section-label">Next Steps</p>
-                        <h3>Planned direction</h3>
+                        <p class="section-label" data-i18n="drakenveilPage.next_steps.label">Next Steps</p>
+                        <h3 data-i18n="drakenveilPage.next_steps.heading">Planned direction</h3>
                         <ul class="detail-list">
-                            <li>Core gameplay loop</li>
-                            <li>Team-based heal / combat mechanics</li>
-                            <li>System-driven progression and balancing</li>
-                            <li>Playable prototype with clearer interaction feedback</li>
+                            <li data-i18n="drakenveilPage.next_steps.item_1">Core gameplay loop</li>
+                            <li data-i18n="drakenveilPage.next_steps.item_2">Team-based heal / combat mechanics</li>
+                            <li data-i18n="drakenveilPage.next_steps.item_3">System-driven progression and balancing</li>
+                            <li data-i18n="drakenveilPage.next_steps.item_4">Playable prototype with clearer interaction feedback</li>
                         </ul>
                     </article>
                 </section>
 
                 <section class="project-grid-two">
                     <article class="detail-card">
-                        <p class="section-label">Focus</p>
-                        <h3>What I wanted to explore</h3>
-                        <p class="detail-text">
+                        <p class="section-label" data-i18n="drakenveilPage.focus.label">Focus</p>
+                        <h3 data-i18n="drakenveilPage.focus.heading">What I wanted to explore</h3>
+                        <p class="detail-text" data-i18n="drakenveilPage.focus.text">
                             I wanted to explore how a game project can be structured from the beginning in a way
                             that feels clear, expandable, and responsive. Instead of jumping straight into gameplay,
                             the focus here was to understand scene flow, UI behavior, and the overall user experience
@@ -98,9 +108,9 @@
                     </article>
 
                     <article class="detail-card">
-                        <p class="section-label">Learning</p>
-                        <h3>What I learned</h3>
-                        <p class="detail-text">
+                        <p class="section-label" data-i18n="drakenveilPage.learning.label">Learning</p>
+                        <h3 data-i18n="drakenveilPage.learning.heading">What I learned</h3>
+                        <p class="detail-text" data-i18n="drakenveilPage.learning.text">
                             This project helped me better understand how to organize scenes, connect interface states,
                             and think more carefully about feedback and flow inside a game environment. It also pushed me
                             to work more deliberately with structure instead of only visuals.
@@ -110,9 +120,9 @@
 
                 <section class="project-section">
                     <div class="section-header">
-                        <p class="section-label">Status</p>
-                        <h2>Work in progress</h2>
-                        <p class="section-text">
+                        <p class="section-label" data-i18n="drakenveilPage.status.label">Status</p>
+                        <h2 data-i18n="drakenveilPage.status.heading">Work in progress</h2>
+                        <p class="section-text" data-i18n="drakenveilPage.status.text">
                             Drakenveil is still in development. The current version is more of a structured prototype
                             than a finished playable experience, but it already reflects the direction of the project:
                             system-focused, atmosphere-driven, and designed as a base for future gameplay mechanics.
@@ -125,17 +135,18 @@
 
     <footer class="footer">
         <div class="footer-inner">
-            <p>© 2026 Jan Heß — Built with HTML, CSS & JavaScript</p>
+            <p data-i18n="footer.text">&copy; 2026 Jan He&szlig; - Built with HTML, CSS &amp; JavaScript</p>
         </div>
     </footer>
 
-    <button id="backToTop" aria-label="Back to top">
-        ↑
+    <button id="backToTop" aria-label="Back to top" data-i18n-aria-label="common.back_to_top">
+        &uarr;
     </button>
 
     <div id="imageModal">
-        <img id="modalImg" src="" alt="Preview">
+        <img id="modalImg" src="" alt="Preview" data-i18n-alt="common.preview_alt">
     </div>
+    <script src="translations.js"></script>
     <script src="script.js"></script>
 </body>
 </html>

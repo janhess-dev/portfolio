@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>Portfolio Website | Jan He&szlig;</title>
+    <title data-i18n="portfolioPage.meta.title">Portfolio Website | Jan He&szlig;</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -14,45 +14,55 @@
     <link rel="stylesheet" href="style.css" />
 </head>
 <body class="project-page">
+
+    <header class="site-header">
+        <nav class="topbar">
+            <div class="lang-switch" aria-label="Language switcher" data-i18n-aria-label="topbar.language_switcher">
+                <button type="button" id="langDe" class="lang-btn">DE</button>
+                <button type="button" id="langEn" class="lang-btn">EN</button>
+            </div>
+        </nav>
+    </header>
+
     <div class="page-flow">
         <main class="project-detail page-enter">
             <div class="project-detail-container">
-                <a href="index.html#projects" class="back-link">&larr; Back to portfolio</a>
+                <a href="index.html#projects" class="back-link" data-i18n="portfolioPage.back_link">&larr; Back to portfolio</a>
 
                 <section class="project-hero">
                     <div class="project-hero-copy">
-                        <p class="section-label">Featured Project</p>
-                        <h1>Portfolio Website</h1>
-                        <p class="project-detail-lead">
+                        <p class="section-label" data-i18n="portfolioPage.hero.label">Featured Project</p>
+                        <h1 data-i18n="portfolioPage.hero.title">Portfolio Website</h1>
+                        <p class="project-detail-lead" data-i18n="portfolioPage.hero.lead">
                             My first portfolio project built to present my work in a clear, structured,
                             and visually focused way. The main goal was to create a site that feels
                             responsive, easy to navigate, and strong enough to grow with future projects.
                         </p>
 
                         <div class="project-stack project-stack-detail">
-                            <span>HTML</span>
-                            <span>CSS</span>
-                            <span>JavaScript</span>
-                            <span>Responsive Design</span>
-                            <span>UI/UX</span>
+                            <span data-i18n="portfolioPage.hero.stack_html">HTML</span>
+                            <span data-i18n="portfolioPage.hero.stack_css">CSS</span>
+                            <span data-i18n="portfolioPage.hero.stack_js">JavaScript</span>
+                            <span data-i18n="portfolioPage.hero.stack_responsive">Responsive Design</span>
+                            <span data-i18n="portfolioPage.hero.stack_uiux">UI/UX</span>
                         </div>
 
                         <div class="project-detail-actions">
-                            <a href="https://janhess-dev.vercel.app/" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Live Preview</a>
-                            <a href="index.html" class="btn btn-secondary">Back Home</a>
+                            <a href="https://janhess-dev.vercel.app/" class="btn btn-primary" target="_blank" rel="noopener noreferrer" data-i18n="portfolioPage.hero.link_live">Live Preview</a>
+                            <a href="index.html" class="btn btn-secondary" data-i18n="portfolioPage.hero.link_home">Back Home</a>
                         </div>
                     </div>
 
                     <div class="project-hero-media">
-                        <img class="zoomable-image" src="JPGs/portfolio.jpg" alt="Screenshot of the portfolio homepage" />
+                        <img class="zoomable-image" src="JPGs/portfolio.jpg" alt="Screenshot of the portfolio homepage" data-i18n-alt="portfolioPage.hero.image_alt" />
                     </div>
                 </section>
 
                 <section class="project-section">
                     <div class="section-header">
-                        <p class="section-label">Overview</p>
-                        <h2>Why I built this project</h2>
-                        <p class="section-text">
+                        <p class="section-label" data-i18n="portfolioPage.overview.label">Overview</p>
+                        <h2 data-i18n="portfolioPage.overview.heading">Why I built this project</h2>
+                        <p class="section-text" data-i18n="portfolioPage.overview.text">
                             This project was created as the foundation of my online presence. I wanted a
                             portfolio that does more than list projects: it should reflect how I think about
                             structure, visual hierarchy, performance, and user experience. Because this is
@@ -63,33 +73,33 @@
 
                 <section class="project-grid-two">
                     <article class="detail-card">
-                        <p class="section-label">Goals</p>
-                        <h3>What the site should communicate</h3>
+                        <p class="section-label" data-i18n="portfolioPage.goals.label">Goals</p>
+                        <h3 data-i18n="portfolioPage.goals.heading">What the site should communicate</h3>
                         <ul class="detail-list">
-                            <li>A clear introduction to who I am and what I focus on</li>
-                            <li>Projects presented with structure instead of visual clutter</li>
-                            <li>A responsive layout that feels clean on desktop and mobile</li>
-                            <li>A design direction inspired by gaming and modern interface systems</li>
+                            <li data-i18n="portfolioPage.goals.item_1">A clear introduction to who I am and what I focus on</li>
+                            <li data-i18n="portfolioPage.goals.item_2">Projects presented with structure instead of visual clutter</li>
+                            <li data-i18n="portfolioPage.goals.item_3">A responsive layout that feels clean on desktop and mobile</li>
+                            <li data-i18n="portfolioPage.goals.item_4">A design direction inspired by gaming and modern interface systems</li>
                         </ul>
                     </article>
 
                     <article class="detail-card">
-                        <p class="section-label">Tech Stack</p>
-                        <h3>Tools and implementation</h3>
+                        <p class="section-label" data-i18n="portfolioPage.tech.label">Tech Stack</p>
+                        <h3 data-i18n="portfolioPage.tech.heading">Tools and implementation</h3>
                         <ul class="detail-list">
-                            <li>Semantic HTML for page structure and content grouping</li>
-                            <li>CSS for layout, visual identity, effects, and responsiveness</li>
-                            <li>JavaScript for smooth scrolling, modal image preview, and interaction flow</li>
-                            <li>Reusable project page components for future portfolio entries</li>
+                            <li data-i18n="portfolioPage.tech.item_1">Semantic HTML for page structure and content grouping</li>
+                            <li data-i18n="portfolioPage.tech.item_2">CSS for layout, visual identity, effects, and responsiveness</li>
+                            <li data-i18n="portfolioPage.tech.item_3">JavaScript for smooth scrolling, modal image preview, and interaction flow</li>
+                            <li data-i18n="portfolioPage.tech.item_4">Reusable project page components for future portfolio entries</li>
                         </ul>
                     </article>
                 </section>
 
                 <section class="project-grid-two">
                     <article class="detail-card">
-                        <p class="section-label">Focus</p>
-                        <h3>What mattered most during development</h3>
-                        <p class="detail-text">
+                        <p class="section-label" data-i18n="portfolioPage.focus.label">Focus</p>
+                        <h3 data-i18n="portfolioPage.focus.heading">What mattered most during development</h3>
+                        <p class="detail-text" data-i18n="portfolioPage.focus.text">
                             The biggest focus was balancing presentation and readability. I wanted the site
                             to feel expressive without becoming noisy, so the layout, spacing, and content
                             blocks were designed to stay easy to scan. I also paid attention to transitions
@@ -98,9 +108,9 @@
                     </article>
 
                     <article class="detail-card">
-                        <p class="section-label">Learning</p>
-                        <h3>What I learned from building it</h3>
-                        <p class="detail-text">
+                        <p class="section-label" data-i18n="portfolioPage.learning.label">Learning</p>
+                        <h3 data-i18n="portfolioPage.learning.heading">What I learned from building it</h3>
+                        <p class="detail-text" data-i18n="portfolioPage.learning.text">
                             This project helped me understand how much polish comes from structure. I learned
                             how to connect design decisions with usability, how to build reusable sections for
                             future project pages, and how to make a personal site feel more like a real product
@@ -111,24 +121,24 @@
 
                 <section class="project-grid-two">
                     <article class="detail-card">
-                        <p class="section-label">Features</p>
-                        <h3>Current highlights</h3>
+                        <p class="section-label" data-i18n="portfolioPage.features.label">Features</p>
+                        <h3 data-i18n="portfolioPage.features.heading">Current highlights</h3>
                         <ul class="detail-list">
-                            <li>Hero section with clear positioning and visual identity</li>
-                            <li>Project cards with dedicated detail pages</li>
-                            <li>Image zoom modal for project previews</li>
-                            <li>Contact section with direct call-to-action</li>
+                            <li data-i18n="portfolioPage.features.item_1">Hero section with clear positioning and visual identity</li>
+                            <li data-i18n="portfolioPage.features.item_2">Project cards with dedicated detail pages</li>
+                            <li data-i18n="portfolioPage.features.item_3">Image zoom modal for project previews</li>
+                            <li data-i18n="portfolioPage.features.item_4">Contact section with direct call-to-action</li>
                         </ul>
                     </article>
 
                     <article class="detail-card">
-                        <p class="section-label">Next Steps</p>
-                        <h3>How I want to expand it</h3>
+                        <p class="section-label" data-i18n="portfolioPage.next_steps.label">Next Steps</p>
+                        <h3 data-i18n="portfolioPage.next_steps.heading">How I want to expand it</h3>
                         <ul class="detail-list">
-                            <li>Add more finished projects with deeper case studies</li>
-                            <li>Refine accessibility details and content hierarchy further</li>
-                            <li>Continue improving performance and responsiveness</li>
-                            <li>Use the portfolio as a growing record of my development journey</li>
+                            <li data-i18n="portfolioPage.next_steps.item_1">Add more finished projects with deeper case studies</li>
+                            <li data-i18n="portfolioPage.next_steps.item_2">Refine accessibility details and content hierarchy further</li>
+                            <li data-i18n="portfolioPage.next_steps.item_3">Continue improving performance and responsiveness</li>
+                            <li data-i18n="portfolioPage.next_steps.item_4">Use the portfolio as a growing record of my development journey</li>
                         </ul>
                     </article>
                 </section>
@@ -138,17 +148,18 @@
 
     <footer class="footer">
         <div class="footer-inner">
-            <p>&copy; 2026 Jan He&szlig; - Built with HTML, CSS & JavaScript</p>
+            <p data-i18n="footer.text">&copy; 2026 Jan He&szlig; - Built with HTML, CSS &amp; JavaScript</p>
         </div>
     </footer>
 
-    <button id="backToTop" aria-label="Back to top">
+    <button id="backToTop" aria-label="Back to top" data-i18n-aria-label="common.back_to_top">
         &uarr;
     </button>
 
     <div id="imageModal">
-        <img id="modalImg" src="" alt="Preview">
+        <img id="modalImg" src="" alt="Preview" data-i18n-alt="common.preview_alt">
     </div>
+    <script src="translations.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
