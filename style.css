@@ -298,6 +298,21 @@ button {
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.16);
 }
 
+    .site-header::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -1px;
+        width: 100%;
+        height: 3px;
+        background: linear-gradient(90deg, #3aa0ff, #6c4cff, #ff4ecd, #3aa0ff);
+        background-size: 200% 100%;
+        animation: energyFlow 5s linear infinite;
+        opacity: 0.8;
+        filter: blur(1px);
+        box-shadow: 0 0 8px rgba(58, 160, 255, 0.45), 0 0 14px rgba(108, 76, 255, 0.35), 0 0 20px rgba(255, 78, 205, 0.25);
+    }
+
 .topbar {
     margin: 0 auto;
     padding: 16px 24px;
@@ -873,6 +888,15 @@ button {
    7. ANIMATIONS / EFFECTS [Keyframes und größere Animationen]
 ========================= */
 
+@keyframes energyFlow {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    100% {
+        background-position: 200% 50%;
+    }
+}
 @keyframes ripple {
     0% {
         transform: scale(0.8);
@@ -1048,6 +1072,8 @@ button {
     gap: 14px;
     color: rgba(255, 255, 255, 0.78);
     line-height: 1.7;
+    list-style: none;
+    padding-left: 0;
 }
 
     .detail-list li {
