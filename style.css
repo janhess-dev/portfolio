@@ -16,6 +16,7 @@ body {
     font-family: "Inter", sans-serif;
     background: var(--color-bg);
     color: var(--color-text);
+    min-height: 100vh;
 }
 
 ::selection {
@@ -43,32 +44,26 @@ button {
     --color-bg: #070726;
     --color-bg-soft: #080729;
     --color-hero: #0b0a2a;
-
     --color-text: #ffffff;
     --color-text-muted: rgba(255, 255, 255, 0.74);
     --color-text-soft: rgba(255, 255, 255, 0.66);
-
     --color-blue: #3aa0ff;
     --color-blue-soft: #8db7ff;
     --color-purple: #6c4cff;
     --color-pink: #ff4ecd;
-    --color-green: #22c55e;
-
+    --color-green: #3fff8b;
     --glass-bg: rgba(255, 255, 255, 0.04);
     --glass-bg-strong: rgba(255, 255, 255, 0.05);
     --glass-bg-hover: rgba(255, 255, 255, 0.08);
     --glass-border: rgba(255, 255, 255, 0.1);
     --glass-border-soft: rgba(255, 255, 255, 0.08);
     --glass-border-hover: rgba(141, 183, 255, 0.35);
-
     --radius-sm: 12px;
     --radius-md: 18px;
     --radius-lg: 28px;
     --radius-xl: 30px;
     --radius-pill: 999px;
-
     --container: 1200px;
-
     --shadow-card: 0 18px 50px rgba(37, 54, 160, 0.2);
     --shadow-button: 0 20px 45px rgba(108, 76, 255, 0.35);
 }
@@ -77,37 +72,10 @@ button {
    3. GLOBAL LAYOUT [Grobe Struktur der Seite]
 ========================= */
 
-.page-flow {
-    position: relative;
-    overflow: hidden;
-    background: linear-gradient( 180deg, var(--color-hero) 0%, var(--color-hero) 30%, #090833 70%, var(--color-bg-soft) 100% );
-}
-
 .lower-flow {
     position: relative;
     overflow: hidden;
-    min-height: 1400px;
 }
-
-    .lower-flow::before {
-        content: "";
-        position: absolute;
-        left: 50%;
-        transform: translateX(-50%) translateY(-80px);
-        width: 1500px;
-        height: 2800px;
-        background-image: url("JPGs/portfolio-pic-vertical.jpg");
-        background-repeat: no-repeat;
-        background-size: contain;
-        background-position: center top;
-        opacity: 0.25;
-        pointer-events: none;
-        z-index: 0;
-        -webkit-mask-image: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.35) 12%, rgba(0, 0, 0, 0.85) 26%, black 45%, black 78%, rgba(0, 0, 0, 0.65) 90%, transparent 100%), linear-gradient(to right, transparent 0%, rgba(0, 0, 0, 0.55) 14%, black 28%, black 72%, rgba(0, 0, 0, 0.55) 86%, transparent 100%);
-        -webkit-mask-composite: source-in;
-        mask-image: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.35) 12%, rgba(0, 0, 0, 0.85) 26%, black 45%, black 78%, rgba(0, 0, 0, 0.65) 90%, transparent 100%), linear-gradient(to right, transparent 0%, rgba(0, 0, 0, 0.55) 14%, black 28%, black 72%, rgba(0, 0, 0, 0.55) 86%, transparent 100%);
-        mask-composite: intersect;
-    }
 
     .lower-flow::after {
         content: "";
@@ -115,26 +83,37 @@ button {
         top: 0;
         left: 0;
         right: 0;
-        height: 120px;
-        background: linear-gradient( to bottom, rgba(11, 10, 42, 0), rgba(11, 10, 42, 0.35) );
+        height: 220px;
+        background: linear-gradient( to bottom, rgba(11, 10, 42, 0.55) 0%, rgba(11, 10, 42, 0.45) 35%, rgba(11, 10, 42, 0.18) 70%, rgba(11, 10, 42, 0) 100% );
         pointer-events: none;
+        z-index: 1;
+    }
+
+    .lower-flow::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+
+        background-image: url("JPGs/portfolio-pic-vertical.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center bottom;
+
+        opacity: 0.25;
+        pointer-events: none;
+        z-index: 0;
+
+        -webkit-mask-image: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.35) 12%, rgba(0, 0, 0, 0.85) 26%, black 45%, black 78%, rgba(0, 0, 0, 0.65) 90%, transparent 100%), linear-gradient(to right, transparent 0%, rgba(0, 0, 0, 0.55) 14%, black 28%, black 72%, rgba(0, 0, 0, 0.55) 86%, transparent 100%);
+        -webkit-mask-composite: source-in;
+        mask-image: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.35) 12%, rgba(0, 0, 0, 0.85) 26%, black 45%, black 78%, rgba(0, 0, 0, 0.65) 90%, transparent 100%), linear-gradient(to right, transparent 0%, rgba(0, 0, 0, 0.55) 14%, black 28%, black 72%, rgba(0, 0, 0, 0.55) 86%, transparent 100%);
+        mask-composite: intersect;
     }
 
 .projects-section,
 .contact-section {
     position: relative;
-    z-index: 1;
+    z-index: 2;
 }
-
-#projects,
-#contact {
-    min-height: 1px;
-}
-
-#contact {
-    scroll-margin-top: 120px;
-}
-
 
 /* =========================
    4. COMPONENTS [Konkrete UI-Elemente der Seite]
@@ -148,7 +127,17 @@ button {
     border-radius: var(--radius-md);
     font-weight: 600;
     transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+    cursor: pointer;
+    will-change: transform;
 }
+    .btn:focus {
+        outline: 2px solid var(--color-purple);
+        outline-offset: 2px;
+    }
+
+    .btn:active {
+        transform: translateY(0);
+    }
 
     .btn:hover {
         transform: translateY(-2px);
@@ -158,10 +147,13 @@ button {
     color: var(--color-text);
     background: linear-gradient( 135deg, var(--color-blue) 0%, var(--color-purple) 55%, var(--color-pink) 100% );
     box-shadow: var(--shadow-button);
+    background-size: 200% 200%;
 }
 
     .btn-primary:hover {
-        box-shadow: 0 10px 25px rgba(108, 76, 255, 0.35);
+        transform: translateY(-2px);
+        box-shadow: 0 15px 35px rgba(108, 76, 255, 0.4);
+        background-position: right center;
     }
 
 .btn-secondary {
@@ -172,7 +164,7 @@ button {
 }
 
     .btn-secondary:hover {
-        background: rgba(255, 255, 255, 0.1);
+        background: rgba(255, 255, 255, 0.12);
         border-color: rgba(255, 255, 255, 0.25);
     }
 
@@ -183,16 +175,18 @@ button {
     display: inline-block;
     border-radius: var(--radius-pill);
     text-transform: uppercase;
+    font-weight: 700;
 }
 
 .section-label {
     margin-bottom: 14px;
     padding: 8px 14px;
-    border: 1px solid rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.22);
     background: var(--glass-bg);
     color: var(--color-blue-soft);
-    font-size: 0.78rem;
+    font-size: 0.9rem;
     letter-spacing: 0.16em;
+    backdrop-filter: blur(10px);
 }
 
 .project-tag {
@@ -204,6 +198,27 @@ button {
     color: var(--color-blue-soft);
     font-size: 0.75rem;
     letter-spacing: 0.12em;
+}
+
+/* Shared text */
+
+.section-header {
+    max-width: 720px;
+    margin-bottom: 40px;
+}
+
+    .section-header h2 {
+        margin-bottom: 16px;
+        color: var(--color-text);
+        font-size: clamp(2rem, 4vw, 3.2rem);
+        line-height: 1.1;
+    }
+
+.section-text {
+    max-width: 620px;
+    color: rgba(255, 255, 255, 0.72);
+    font-size: clamp(0.95rem, 1.5vw, 1rem);
+    line-height: 1.8;
 }
 
 /* BackToTop */
@@ -218,24 +233,31 @@ button {
     align-items: center;
     justify-content: center;
     border-radius: 14px;
-    background: linear-gradient(135deg, #3aa0ff, #6c4cff);
     border: none;
+    background: linear-gradient(135deg, #3aa0ff, #6c4cff);
     box-shadow: 0 10px 25px rgba(108, 76, 255, 0.35);
     color: white;
     font-size: 24px;
     cursor: pointer;
-    backdrop-filter: blur(10px);
     opacity: 0;
     transform: translateY(10px);
     pointer-events: none;
-    transition: all 0.25s ease;
-    z-index: 999;
+    transition: opacity 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+    --z-floating: 10;
 }
 
     #backToTop.show {
         opacity: 1;
         transform: translateY(0);
         pointer-events: auto;
+    }
+    #backToTop.focus {
+        outline: 2px solid white;
+        outline-offset: 3px;
+    }
+
+    #backToTop:active {
+        transform: scale(0.95);
     }
 
     #backToTop:hover {
@@ -257,41 +279,18 @@ button {
         opacity: 1;
     }
 
-/* Shared text */
-
-.section-header {
-    max-width: 720px;
-    margin-bottom: 40px;
-}
-
-    .section-header h2 {
-        margin-bottom: 16px;
-        color: var(--color-text);
-        font-size: clamp(2rem, 4vw, 3.2rem);
-        line-height: 1.1;
-    }
-
-.section-text {
-    max-width: 620px;
-    color: rgba(255, 255, 255, 0.72);
-    font-size: 1rem;
-    line-height: 1.8;
-}
-
-
 /* =========================
    5. SECTIONS [Größere Bereiche der Seite]
 ========================= */
-
 
 /* Hero */
 
 .hero {
     position: relative;
     min-height: 100vh;
+    min-height: 100svh;
     overflow: hidden;
     background: var(--color-hero);
-    z-index: 2;
 }
 
     .hero::before {
@@ -300,24 +299,19 @@ button {
         left: 0;
         right: 0;
         bottom: 0;
-        height: 160px;
-        background: linear-gradient( to bottom, rgba(11, 10, 42, 0) 0%, rgba(11, 10, 42, 0.6) 60%, var(--color-hero) 100% );
+        height: 260px;
+        background: linear-gradient( to bottom, rgba(11, 10, 42, 0) 0%, rgba(11, 10, 42, 0.55) 45%, rgba(7, 7, 38, 0.9) 75%, var(--color-bg) 100% );
         pointer-events: none;
-        z-index: 2;
-    }
-
-    .hero::after {
-        content: none;
+        z-index: 1;
     }
 
 .hero-background {
     position: absolute;
     inset: 0;
-    /*    background-image: url("JPGs/portfolio-pic.jpg");*/
-    /*    background-image: url("JPGs/background_portfolio_face.jpg");*/
     background-image: url("JPGs/background_portfolio_face2.jpg");
     background-size: cover;
     background-position: center;
+    z-index: 0;
 }
 
 .hero-overlay {
@@ -345,9 +339,10 @@ button {
 .glow-2 {
     width: 240px;
     height: 240px;
-    left: 100px;
-    bottom: -40px;
+    left: 300px;
+    bottom: 200px;
     background: var(--color-blue);
+    opacity: 0.45;
 }
 
 .glow-3 {
@@ -358,10 +353,16 @@ button {
     background: var(--color-pink);
 }
 
+.hero-overlay,
+.glow {
+    z-index: 1;
+}
+
 .hero-content {
     position: relative;
     z-index: 2;
     min-height: 100vh;
+    min-height: 100svh;
     max-width: var(--container);
     display: flex;
     flex-direction: column;
@@ -376,22 +377,30 @@ button {
     align-items: center;
     gap: 10px;
     margin-bottom: 24px;
-    padding: 5px 10px;
+    padding: 7px 14px;
     border-radius: var(--radius-pill);
-    border: 1px solid rgba(255, 255, 255, 0.15);
-    background: rgba(255, 255, 255, 0.05);
-    backdrop-filter: blur(10px);
-    color: rgba(255, 255, 255, 0.75);
-    font-size: 0.68rem;
-    letter-spacing: 0.15em;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid var(--glass-border);
+    backdrop-filter: blur(12px);
+    color: rgba(255, 255, 255, 0.82);
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    line-height: 1;
     text-transform: uppercase;
-    opacity: 0.85;
-    cursor: pointer;
+    box-shadow: 0 0 20px rgba(108, 76, 255, 0.15), inset 0 0 10px rgba(255, 255, 255, 0.05);
+    transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
 }
 
     .hero-status:hover {
-        background: rgba(255, 255, 255, 0.1);
-        border-color: rgba(255, 255, 255, 0.3);
+        transform: translateY(-2px);
+        border-color: rgba(120, 150, 255, 0.55);
+        box-shadow: 0 0 30px rgba(108, 76, 255, 0.25), inset 0 0 12px rgba(255, 255, 255, 0.08);
+    }
+
+    .hero-status:focus-visible {
+        outline: 2px solid rgba(120, 150, 255, 0.85);
+        outline-offset: 4px;
     }
 
 .status-dot {
@@ -400,6 +409,7 @@ button {
     height: 8px;
     background: var(--color-green);
     border-radius: 50%;
+    box-shadow: 0 0 10px rgba(63, 255, 139, 0.9);
     position: relative;
 }
 
@@ -408,8 +418,7 @@ button {
         position: absolute;
         inset: -6px;
         border-radius: 50%;
-        border: 2px solid var(--color-green);
-        opacity: 0.6;
+        border: 2px solid rgba(63, 255, 139, 0.6);
         animation: ripple 2s infinite;
     }
 
@@ -508,14 +517,14 @@ button {
 /* Projects */
 
 .projects-section {
-    padding: 55px 40px 80px;
+    padding: 80px 40px 80px;
     max-width: var(--container);
     margin: 0 auto;
 }
 
 .projects-grid {
     display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 24px;
     align-items: stretch;
 }
@@ -639,20 +648,26 @@ button {
 }
 
     .contact-intro h2 {
-        text-shadow: 0 0 25px rgba(108, 76, 255, 0.2);
+        color: white;
+        font-weight: 700;
+        letter-spacing: -0.01em;
+        text-shadow: 0 0 25px rgba(108, 76, 255, 0.25), 0 0 60px rgba(108, 76, 255, 0.15);
     }
 
 .contact-card {
     padding: 32px;
     border-radius: var(--radius-xl);
-    border: 1px solid var(--glass-border);
-    background: var(--glass-bg);
+
     backdrop-filter: blur(12px);
-    box-shadow: 0 18px 50px rgba(20, 20, 80, 0.16);
+
+    background: rgba(255, 255, 255, 0.055);
+    border: 1px solid rgba(141, 183, 255, 0.18);
+    box-shadow: 0 24px 70px rgba(20, 20, 80, 0.28), inset 0 1px 0 rgba(255, 255, 255, 0.06);
 }
 
     .contact-card:hover {
         box-shadow: 0 25px 60px rgba(40, 40, 120, 0.25);
+        transition: box-shadow 0.25s ease, border-color 0.25s ease;
     }
 
 .contact-note {
@@ -679,6 +694,11 @@ button {
     border: 1px solid var(--glass-border-soft);
     transition: transform 0.25s ease, border-color 0.25s ease, background 0.25s ease;
 }
+    .contact-link:focus-visible {
+        outline: none;
+        border-color: rgba(141, 183, 255, 0.55);
+        box-shadow: 0 0 0 3px rgba(108, 76, 255, 0.25);
+    }
 
     .contact-link:hover {
         transform: translateY(-4px);
@@ -730,6 +750,7 @@ button {
     font-size: 14px;
     letter-spacing: 0.3px;
 }
+
 /* =========================
    6. MODAL
 ========================= */
@@ -756,7 +777,7 @@ button {
     opacity: 0;
     pointer-events: none;
     transition: opacity 0.3s ease;
-    z-index: 9999;
+    z-index: 10;
 }
 
     #imageModal.show {
@@ -843,7 +864,7 @@ button {
 }
 
 /* =========================
-   8. PROJECT DETAIL PAGE
+   8. PROJECT DETAIL PAGE [Einzelne Sub-Pages und ihre CSS.]
 ========================= */
 
 .project-page {
@@ -985,6 +1006,7 @@ button {
    9. MEDIA QUERIES [Anpassungen an andere Bildschirm-Formate]
 ========================= */
 
+/* Tablet */
 @media (max-width: 980px) {
     .projects-grid {
         grid-template-columns: 1fr;
@@ -1015,6 +1037,7 @@ button {
     }
 }
 
+/* Mobile hero */
 @media (max-width: 900px) {
     .hero-content {
         padding: 72px 20px;
@@ -1030,6 +1053,7 @@ button {
     }
 }
 
+/* Small mobile */
 @media (max-width: 560px) {
     .hero-text {
         font-size: 1rem;

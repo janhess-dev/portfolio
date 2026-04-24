@@ -1,44 +1,42 @@
-    const projects = document.getElementById("projects");
-    const contact = document.getElementById("contact");
-    const goProjects = document.getElementById("goProjects");
-    const goContact = document.getElementById("goContact");
-    const btn = document.getElementById("backToTop");
-    const goStatusContact = document.getElementById("goStatusContact");
-    const modal = document.getElementById("imageModal");
-    const modalImg = document.getElementById("modalImg");
-    const backLink = document.querySelector(".back-link");
-    const projectDetail = document.querySelector(".project-detail");
+const $ = (selector) => document.querySelector(selector);
+const byId = (id) => document.getElementById(id);
 
-    function scrollToSection(section, offset = 80) {
-            const y = section.getBoundingClientRect().top + window.scrollY - offset;
+const projects = byId("projects");
+const contact = byId("contact");
+const btn = byId("backToTop");
+const modal = byId("imageModal");
+const modalImg = byId("modalImg");
+const backLink = $(".back-link");
+const projectDetail = $(".project-detail");
+
+function scrollToSection(section, offset = 80) {
+    if (!section) return;
+
+    const y = section.getBoundingClientRect().top + window.scrollY - offset;
 
     window.scrollTo({
         top: y,
-    behavior: "smooth"
-            });
-        }
-
-if (goProjects) {
-    goProjects.addEventListener("click", (e) => {
-        e.preventDefault();
-        scrollToSection(projects, 80);
+        behavior: "smooth"
     });
 }
 
-if (goContact) {
-    goContact.addEventListener("click", (e) => {
+function addScrollLink(id, target) {
+    const link = byId(id);
+    if (!link) return;
+
+    link.addEventListener("click", (e) => {
         e.preventDefault();
-        scrollToSection(contact, 80);
+        scrollToSection(target);
     });
 }
+
+addScrollLink("goProjects", projects);
+addScrollLink("goContact", contact);
+addScrollLink("goStatusContact", contact);
 
 if (btn) {
     window.addEventListener("scroll", () => {
-        if (window.scrollY > 400) {
-            btn.classList.add("show");
-        } else {
-            btn.classList.remove("show");
-        }
+        btn.classList.toggle("show", window.scrollY > 400);
     });
 
     btn.addEventListener("click", () => {
@@ -49,32 +47,26 @@ if (btn) {
     });
 }
 
-if (goStatusContact) {
-    goStatusContact.addEventListener("click", (e) => {
-        e.preventDefault();
-        scrollToSection(contact, 80);
-    });
-}
-
 if (modal && modalImg) {
-    document.querySelectorAll(".zoomable-image").forEach(img => {
+    const closeModal = () => {
+        modal.classList.remove("show");
+        document.body.style.overflow = "";
+    };
+
+    document.querySelectorAll(".zoomable-image").forEach((img) => {
         img.addEventListener("click", () => {
             modal.classList.add("show");
             modalImg.src = img.dataset.full || img.src;
-            modalImg.alt = img.alt;
+            modalImg.alt = img.alt || "";
             document.body.style.overflow = "hidden";
         });
     });
 
-    modal.addEventListener("click", () => {
-        modal.classList.remove("show");
-        document.body.style.overflow = "";
-    });
+    modal.addEventListener("click", closeModal);
 
     document.addEventListener("keydown", (e) => {
         if (e.key === "Escape" && modal.classList.contains("show")) {
-            modal.classList.remove("show");
-            document.body.style.overflow = "";
+            closeModal();
         }
     });
 }

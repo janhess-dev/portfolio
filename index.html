@@ -1,14 +1,18 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="en">
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Portfolio</title>
+
+    <title>Portfolio | Jan Heß</title>
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
           rel="stylesheet" />
+
     <link rel="stylesheet" href="style.css" />
+
 </head>
 <body>
     <div class="page-flow">
@@ -21,7 +25,10 @@
             <div class="glow glow-3"></div>
 
             <div class="hero-content">
-                <a href="#" id="goStatusContact" class="hero-status"><span class="status-dot"></span> Available for work</a>
+                <a href="#contact" id="goStatusContact" class="hero-status">
+                    <span class="status-dot" aria-hidden="true"></span>
+                    | Available for work
+                </a>
                 <h1 class="hero-name">Jan Heß</h1>
                 <p class="hero-role"><span>Aspiring Developer</span> · Gaming Inspired</p>
 
@@ -38,8 +45,8 @@
                 </p>
 
                 <div class="hero-buttons">
-                    <a href="#" id="goProjects" class="btn btn-primary">View Projects</a>
-                    <a href="#" id="goContact" class="btn btn-secondary">Contact</a>
+                    <a href="#projects" id="goProjects" class="btn btn-primary">View Projects</a>
+                    <a href="#contact" id="goContact" class="btn btn-secondary">Contact</a>
                 </div>
 
                 <div class="stats">
@@ -74,6 +81,10 @@
                     <div class="projects-grid">
                         <article class="project-card">
                             <div class="project-tag">Featured</div>
+                            <div class="project-image">
+                                <img class="zoomable-image" src="JPGs/portfolio.jpg" alt="Portfolio Screenshot">
+                            </div>
+
                             <h3>Portfolio Website</h3>
                             <p>
                                 A personal portfolio built to showcase projects with a clear structure, strong performance, and intuitive user experience.
@@ -88,7 +99,7 @@
 
                             <div class="project-links">
                                 <a href="https://janhess-dev.vercel.app/">Live Preview</a>
-                                <a href="https://github.com/janhess-dev/portfolio">Source Code</a>
+                                <a href="portfolio.html">Overview</a>
                             </div>
                         </article>
 
@@ -116,6 +127,10 @@
                                 <a href="drakenveil.html">Overview</a>
                             </div>
                         </article>
+                        <article class="project-card">
+
+                        </article>
+
                     </div>
                 </section>
 
@@ -142,15 +157,15 @@
                                     <strong>nachrichtjh@gmail.com</strong>
                                 </a>
 
-                                <a href="https://github.com/janhess-dev" target="_blank" class="contact-link">
+                                <a href="https://github.com/janhess-dev" target="_blank" rel="noopener noreferrer" class="contact-link">
                                     <span>GitHub</span>
                                     <strong>github.com/janhess-dev</strong>
                                 </a>
 
-                                <a href="#" class="contact-link">
+                                <div class="contact-link">
                                     <span>Location</span>
                                     <strong>Germany · Remote</strong>
-                                </a>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -168,7 +183,7 @@
     <button id="backToTop" aria-label="Back to top">
         ↑
     </button>
-    <div id="imageModal">
+    <div id="imageModal" role="dialog" aria-modal="true" aria-hidden="true">
         <img id="modalImg" src="" alt="Preview">
     </div>
     <script src="script.js"></script>
