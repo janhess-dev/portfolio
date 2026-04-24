@@ -12,6 +12,11 @@ const langDe = byId("langDe");
 const langEn = byId("langEn");
 const hasTranslations = typeof translations !== "undefined";
 
+const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+
+const getScrollBehavior = () => {
+    return prefersReducedMotion.matches ? "auto" : "smooth";
+};
 
 function scrollToSection(section, offset = 80) {
     if (!section) return;
@@ -20,7 +25,7 @@ function scrollToSection(section, offset = 80) {
 
     window.scrollTo({
         top: y,
-        behavior: "smooth"
+        behavior: getScrollBehavior()
     });
 }
 
@@ -46,7 +51,7 @@ if (btn) {
     btn.addEventListener("click", () => {
         window.scrollTo({
             top: 0,
-            behavior: "smooth"
+            behavior: getScrollBehavior()
         });
     });
 }
@@ -79,12 +84,16 @@ if (backLink && projectDetail) {
     backLink.addEventListener("click", (e) => {
         e.preventDefault();
 
-        projectDetail.classList.remove("page-enter");
-        projectDetail.classList.add("page-exit-back");
-
-        setTimeout(() => {
+        if (prefersReducedMotion.matches) {
             window.location.href = backLink.href;
-        }, 420);
+        } else {
+            projectDetail.classList.remove("page-enter");
+            projectDetail.classList.add("page-exit-back");
+
+            setTimeout(() => {
+                window.location.href = backLink.href;
+            }, 420);
+        }
     });
 }
 

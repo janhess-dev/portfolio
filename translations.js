@@ -102,6 +102,12 @@ const translations = {
         "portfolioPage.next_steps.item_2": "Refine accessibility details and content hierarchy further",
         "portfolioPage.next_steps.item_3": "Continue improving performance and responsiveness",
         "portfolioPage.next_steps.item_4": "Use the portfolio as a growing record of my development journey",
+        "portfolioPage.accessibility.label": "Accessibility",
+        "portfolioPage.accessibility.heading": "What I improved",
+        "portfolioPage.accessibility.item_1": "Clearer focus-visible states for interactive elements",
+        "portfolioPage.accessibility.item_2": "Translated alt texts and labels",
+        "portfolioPage.accessibility.item_3": "Reduced-motion support for animations and scrolling",
+        "portfolioPage.accessibility.item_4": "More structured and semantic page sections",
 
         // drakenveil.html
         "drakenveilPage.meta.title": "Drakenveil | Jan He\u00df",
@@ -245,6 +251,12 @@ const translations = {
         "portfolioPage.next_steps.item_2": "Accessibility-Details und Content-Hierarchie weiter verfeinern",
         "portfolioPage.next_steps.item_3": "Performance und Responsiveness weiter verbessern",
         "portfolioPage.next_steps.item_4": "Das Portfolio als wachsende Dokumentation meiner Entwicklung nutzen",
+        "portfolioPage.accessibility.label": "Accessibility",
+        "portfolioPage.accessibility.heading": "Was ich verbessert habe",
+        "portfolioPage.accessibility.item_1": "Klarere focus-visible-Zustände für interaktive Elemente",
+        "portfolioPage.accessibility.item_2": "Übersetzte Alt-Texte und Labels",
+        "portfolioPage.accessibility.item_3": "Unterstützung für reduzierte Bewegungen bei Animationen und Scrolling",
+        "portfolioPage.accessibility.item_4": "Strukturiertere und semantischere Seitenabschnitte",
 
         // drakenveil.html
         "drakenveilPage.meta.title": "Drakenveil | Jan He\u00df",

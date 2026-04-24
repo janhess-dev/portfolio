@@ -132,11 +132,11 @@ button {
     cursor: pointer;
     will-change: transform;
 }
-    .btn:focus {
+
+    .btn:focus-visible {
         outline: 2px solid var(--color-purple);
         outline-offset: 2px;
     }
-
     .btn:active {
         transform: translateY(0);
     }
@@ -253,7 +253,7 @@ button {
         transform: translateY(0);
         pointer-events: auto;
     }
-    #backToTop.focus {
+    #backToTop:focus-visible {
         outline: 2px solid white;
         outline-offset: 3px;
     }
@@ -700,6 +700,12 @@ button {
         font-size: 0.92rem;
         transition: all 0.25s ease;
     }
+
+.project-inks a:focus-visible {
+    outline: none;
+    border-color: rgba(141, 183, 255, 0.55);
+    box-shadow: 0 0 0 3px rgba(108, 76, 255, 0.25);
+}    
 
         .project-links a:hover {
             transform: translateY(-2px);
@@ -1163,4 +1169,52 @@ button {
             max-width: 280px;
             text-align: center;
         }
+}
+
+/* prefers-reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation: none;
+        transition: none;
+    }
+
+    html {
+        scroll-behavior: auto;
+    }
+
+    .btn:hover,
+    .btn-primary:hover,
+    .lang-btn:hover,
+    .hero-status:hover,
+    .project-card:hover,
+    .project-links a:hover,
+    .contact-link:hover,
+    .back-link:hover,
+    #backToTop:hover {
+        transform: none;
+    }
+
+        .project-card:hover .project-image img,
+        .zoomable-image:hover {
+            transform: none;
+            filter: none;
+        }
+
+        #backToTop:hover::after {
+            opacity: 0;
+        }
+
+    .site-header::after {
+        animation: none;
+        opacity: 0.45;
+    }
+
+    .page-enter, .page-exit-back{
+        opacity: 1;
+        transform: none;
+    }
+
+
 }
