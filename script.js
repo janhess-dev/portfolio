@@ -8,6 +8,10 @@ const modal = byId("imageModal");
 const modalImg = byId("modalImg");
 const backLink = $(".back-link");
 const projectDetail = $(".project-detail");
+const langDe = byId("langDe");
+const langEn = byId("langEn");
+const hasTranslations = typeof translations !== "undefined";
+
 
 function scrollToSection(section, offset = 80) {
     if (!section) return;
@@ -83,3 +87,74 @@ if (backLink && projectDetail) {
         }, 420);
     });
 }
+
+/// Language Localization / Function
+function setLanguage(lang) {
+    document.documentElement.lang = lang;
+
+    if (langDe && langEn && lang === "de") {
+        langDe.classList.add("is-active");
+        langEn.classList.remove("is-active");
+    } else if (langDe && langEn) {
+        langEn.classList.add("is-active");
+        langDe.classList.remove("is-active");
+    }
+
+    if (!hasTranslations || !translations[lang]) {
+        localStorage.setItem("language", lang);
+        return;
+    }
+
+    document.querySelectorAll("[data-i18n]").forEach((element) => {
+        const key = element.dataset.i18n;
+        const text = translations[lang][key];
+
+        if (typeof text === "string") {
+            element.textContent = text;
+        }
+    });
+
+    document.querySelectorAll("[data-i18n-html]").forEach((element) => {
+        const key = element.dataset.i18nHtml;
+        const text = translations[lang][key];
+
+        if (typeof text === "string") {
+            element.innerHTML = text;
+        }
+    });
+
+    document.querySelectorAll("[data-i18n-alt]").forEach((element) => {
+        const key = element.dataset.i18nAlt;
+        const text = translations[lang][key];
+
+        if (typeof text === "string") {
+            element.alt = text;
+        }
+    });
+
+    document.querySelectorAll("[data-i18n-aria-label]").forEach((element) => {
+        const key = element.dataset.i18nAriaLabel;
+        const text = translations[lang][key];
+
+        if (typeof text === "string") {
+            element.setAttribute("aria-label", text);
+        }
+    });
+
+    localStorage.setItem("language", lang);
+}
+
+if (langDe) {
+    langDe.addEventListener("click", () => {
+        setLanguage("de");
+    });
+}
+
+if (langEn) {
+    langEn.addEventListener("click", () => {
+        setLanguage("en");
+    });
+}
+
+const savedLanguage = localStorage.getItem("language") || "de";
+setLanguage(savedLanguage);

@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>Portfolio | Jan Heß</title>
+    <title data-i18n="meta.title">Portfolio | Jan He&szlig;</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -16,63 +16,74 @@
 </head>
 <body>
     <div class="page-flow">
-        <header class="hero">
-            <div class="hero-background"></div>
-            <div class="hero-overlay"></div>
 
-            <div class="glow glow-1"></div>
-            <div class="glow glow-2"></div>
-            <div class="glow glow-3"></div>
-
-            <div class="hero-content">
-                <a href="#contact" id="goStatusContact" class="hero-status">
-                    <span class="status-dot" aria-hidden="true"></span>
-                    | Available for work
-                </a>
-                <h1 class="hero-name">Jan Heß</h1>
-                <p class="hero-role"><span>Aspiring Developer</span> · Gaming Inspired</p>
-
-                <h2 class="hero-title">
-                    I’m an aspiring developer<br />
-                    building <span>interactive web experiences</span><br />
-                    focused on performance,<br />
-                    usability, and game systems.
-                </h2>
-
-                <p class="hero-text">
-                    I build interfaces that feel clear, responsive, and intuitive.<br />
-                    I'm especially interested in projects where performance, structure, and game-inspired systems come together.
-                </p>
-
-                <div class="hero-buttons">
-                    <a href="#projects" id="goProjects" class="btn btn-primary">View Projects</a>
-                    <a href="#contact" id="goContact" class="btn btn-secondary">Contact</a>
+        <header class="site-header">
+            <nav class="topbar">
+                <div class="lang-switch" aria-label="Language switcher" data-i18n-aria-label="topbar.language_switcher">
+                    <button type="button" id="langDe" class="lang-btn is-active">DE</button>
+                    <button type="button" id="langEn" class="lang-btn">EN</button>
                 </div>
-
-                <div class="stats">
-                    <div class="stat-card">
-                        <strong>Performance</strong>
-                        <span>Optimizing for smooth and responsive experiences</span>
-                    </div>
-                    <div class="stat-card">
-                        <strong>Usability</strong>
-                        <span>Building interfaces that feel intuitive and clear</span>
-                    </div>
-                    <div class="stat-card">
-                        <strong>Gaming Mindset</strong>
-                        <span>Inspired by systems, logic, and player-focused design</span>
-                    </div>
-                </div>
-            </div>
+            </nav>
         </header>
 
         <main>
+            <section class="hero">
+                <div class="hero-background"></div>
+                <div class="hero-overlay"></div>
+
+                <div class="glow glow-1"></div>
+                <div class="glow glow-2"></div>
+                <div class="glow glow-3"></div>
+
+                <div class="hero-content">
+
+                    <a href="#contact" id="goStatusContact" class="hero-status">
+                        <span class="status-dot" aria-hidden="true"></span>
+                        <span data-i18n="hero.status">Available for work</span>
+                    </a>
+                    <h1 class="hero-name" data-i18n="hero.name">Jan He&szlig;</h1>
+                    <p class="hero-role" data-i18n-html="hero.role"><span>Aspiring Developer</span> &middot; Gaming Inspired</p>
+
+                    <h2 class="hero-title" data-i18n-html="hero.title">
+                        I'm an aspiring developer<br />
+                        building <span>interactive web experiences</span><br />
+                        focused on performance,<br />
+                        usability, and game systems.
+                    </h2>
+
+                    <p class="hero-text" data-i18n-html="hero.text">
+                        I build interfaces that feel clear, responsive, and intuitive.<br />
+                        I'm especially interested in projects where performance, structure, and game-inspired systems come together.
+                    </p>
+
+                    <div class="hero-buttons">
+                        <a href="#projects" id="goProjects" class="btn btn-primary" data-i18n="hero.cta_projects">View Projects</a>
+                        <a href="#contact" id="goContact" class="btn btn-secondary" data-i18n="hero.cta_contact">Contact</a>
+                    </div>
+
+                    <div class="stats">
+                        <div class="stat-card">
+                            <strong data-i18n="stats.performance.title">Performance</strong>
+                            <span data-i18n="stats.performance.text">Optimizing for smooth and responsive experiences</span>
+                        </div>
+                        <div class="stat-card">
+                            <strong data-i18n="stats.usability.title">Usability</strong>
+                            <span data-i18n="stats.usability.text">Building interfaces that feel intuitive and clear</span>
+                        </div>
+                        <div class="stat-card">
+                            <strong data-i18n="stats.gaming.title">Gaming Mindset</strong>
+                            <span data-i18n="stats.gaming.text">Inspired by systems, logic, and player-focused design</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
             <div class="lower-flow">
                 <section id="projects" class="projects-section">
                     <div class="section-header">
-                        <p class="section-label">Projects</p>
-                        <h2>Selected work and ongoing ideas</h2>
-                        <p class="section-text">
+                        <p class="section-label" data-i18n="projects.label">Projects</p>
+                        <h2 data-i18n="projects.heading">Selected work and ongoing ideas</h2>
+                        <p class="section-text" data-i18n="projects.intro">
                             A selection of projects that reflect my focus on performance, usability,
                             and gaming-inspired thinking.
                         </p>
@@ -80,55 +91,53 @@
 
                     <div class="projects-grid">
                         <article class="project-card">
-                            <div class="project-tag">Featured</div>
+                            <div class="project-tag" data-i18n="projects.portfolio.tag">Featured</div>
                             <div class="project-image">
-                                <img class="zoomable-image" src="JPGs/portfolio.jpg" alt="Portfolio Screenshot">
+                                <img class="zoomable-image" src="JPGs/portfolio.jpg" alt="Portfolio Screenshot" data-i18n-alt="projects.portfolio.image_alt">
                             </div>
 
-                            <h3>Portfolio Website</h3>
-                            <p>
+                            <h3 data-i18n="projects.portfolio.title">Portfolio Website</h3>
+                            <p data-i18n="projects.portfolio.text">
                                 A personal portfolio built to showcase projects with a clear structure, strong performance, and intuitive user experience.
                             </p>
 
                             <div class="project-stack">
-                                <span>HTML</span>
-                                <span>CSS</span>
-                                <span>JS</span>
-                                <span>UI/UX</span>
+                                <span data-i18n="projects.portfolio.stack_html">HTML</span>
+                                <span data-i18n="projects.portfolio.stack_css">CSS</span>
+                                <span data-i18n="projects.portfolio.stack_js">JS</span>
+                                <span data-i18n="projects.portfolio.stack_uiux">UI/UX</span>
                             </div>
 
                             <div class="project-links">
-                                <a href="https://janhess-dev.vercel.app/">Live Preview</a>
-                                <a href="portfolio.html">Overview</a>
+                                <a href="https://janhess-dev.vercel.app/" data-i18n="projects.portfolio.link_live">Live Preview</a>
+                                <a href="portfolio.html" data-i18n="projects.portfolio.link_overview">Overview</a>
                             </div>
                         </article>
 
                         <article class="project-card">
-                            <div class="project-tag">Game Prototype</div>
+                            <div class="project-tag" data-i18n="projects.drakenveil.tag">Game Prototype</div>
                             <div class="project-image">
-                                <img class="zoomable-image" src="JPGs/drakenveil.jpg" alt="Drakenveil Screenshot">
+                                <img class="zoomable-image" src="JPGs/drakenveil.jpg" alt="Drakenveil Screenshot" data-i18n-alt="projects.drakenveil.image_alt">
                             </div>
 
-
-                            <h3>Drakenveil (Game Prototype)</h3>
-                            <p>
+                            <h3 data-i18n="projects.drakenveil.title">Drakenveil (Game Prototype)</h3>
+                            <p data-i18n="projects.drakenveil.text">
                                 A Unity-based game prototype currently in development, featuring a structured menu system, scene navigation, and audio feedback, built to explore core systems and interaction flow.
                             </p>
 
                             <div class="project-stack">
-                                <span>Unity</span>
-                                <span>C#</span>
-                                <span>UI Systems</span>
-                                <span>Scene Management</span>
+                                <span data-i18n="projects.drakenveil.stack_unity">Unity</span>
+                                <span data-i18n="projects.drakenveil.stack_csharp">C#</span>
+                                <span data-i18n="projects.drakenveil.stack_ui">UI Systems</span>
+                                <span data-i18n="projects.drakenveil.stack_scene">Scene Management</span>
                             </div>
 
                             <div class="project-links">
-                                <a href="#">Coming Soon</a>
-                                <a href="drakenveil.html">Overview</a>
+                                <a href="#" data-i18n="projects.drakenveil.link_soon">Coming Soon</a>
+                                <a href="drakenveil.html" data-i18n="projects.drakenveil.link_overview">Overview</a>
                             </div>
                         </article>
                         <article class="project-card">
-
                         </article>
 
                     </div>
@@ -137,34 +146,34 @@
                 <section id="contact" class="contact-section">
                     <div class="contact-wrapper">
                         <div class="contact-intro">
-                            <p class="section-label">Contact</p>
-                            <h2>Let’s build something meaningful.</h2>
-                            <p class="section-text">
-                                I’m open to new opportunities, collaborations, and projects that combine
+                            <p class="section-label" data-i18n="contact.label">Contact</p>
+                            <h2 data-i18n="contact.heading">Let's build something meaningful.</h2>
+                            <p class="section-text" data-i18n="contact.intro">
+                                I'm open to new opportunities, collaborations, and projects that combine
                                 performance, usability, and thoughtful design.
                             </p>
                         </div>
 
                         <div class="contact-card">
-                            <p class="contact-note">
-                                Whether it’s a web project, a gaming-inspired idea, or simply a good
-                                conversation about building better experiences — feel free to reach out.
+                            <p class="contact-note" data-i18n="contact.note">
+                                Whether it's a web project, a gaming-inspired idea, or simply a good
+                                conversation about building better experiences - feel free to reach out.
                             </p>
 
                             <div class="contact-links">
                                 <a href="mailto:nachrichtjh@gmail.com" class="contact-link">
-                                    <span>Email</span>
-                                    <strong>nachrichtjh@gmail.com</strong>
+                                    <span data-i18n="contact.email.label">Email</span>
+                                    <strong data-i18n="contact.email.value">nachrichtjh@gmail.com</strong>
                                 </a>
 
                                 <a href="https://github.com/janhess-dev" target="_blank" rel="noopener noreferrer" class="contact-link">
-                                    <span>GitHub</span>
-                                    <strong>github.com/janhess-dev</strong>
+                                    <span data-i18n="contact.github.label">GitHub</span>
+                                    <strong data-i18n="contact.github.value">github.com/janhess-dev</strong>
                                 </a>
 
                                 <div class="contact-link">
-                                    <span>Location</span>
-                                    <strong>Germany · Remote</strong>
+                                    <span data-i18n="contact.location.label">Location</span>
+                                    <strong data-i18n="contact.location.value">Germany &middot; Remote</strong>
                                 </div>
                             </div>
                         </div>
@@ -176,16 +185,18 @@
 
     <footer class="footer">
         <div class="footer-inner">
-            <p>© 2026 Jan Heß — Built with HTML, CSS & JavaScript</p>
+            <p data-i18n="footer.text">&copy; 2026 Jan He&szlig; - Built with HTML, CSS &amp; JavaScript</p>
         </div>
     </footer>
 
-    <button id="backToTop" aria-label="Back to top">
-        ↑
+    <button id="backToTop" aria-label="Back to top" data-i18n-aria-label="common.back_to_top">
+        &uarr;
     </button>
     <div id="imageModal" role="dialog" aria-modal="true" aria-hidden="true">
-        <img id="modalImg" src="" alt="Preview">
+        <img id="modalImg" src="" alt="Preview" data-i18n-alt="common.preview_alt">
     </div>
+
+    <script src="translations.js"></script>
     <script src="script.js"></script>
 </body>
 </html>

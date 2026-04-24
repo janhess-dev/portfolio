@@ -285,6 +285,69 @@ button {
    5. SECTIONS [Größere Bereiche der Seite]
 ========================= */
 
+/* topbar */
+
+.site-header {
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    background: rgba(7, 7, 38, 0.55);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.16);
+}
+
+.topbar {
+    margin: 0 auto;
+    padding: 16px 24px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.lang-switch {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px;
+    border-radius: var(--radius-pill);
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid var(--glass-border);
+    backdrop-filter: blur(12px);
+    box-shadow: 0 0 20px rgba(108, 76, 255, 0.14);
+}
+
+.lang-btn {
+    border: none;
+    padding: 10px 16px;
+    border-radius: var(--radius-pill);
+    background: transparent;
+    color: rgba(255, 255, 255, 0.75);
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+
+    .lang-btn:hover {
+        color: rgba(255, 255, 255, 0.96);
+        transform: translateY(-1px);
+    }
+
+    .lang-btn:focus-visible {
+        outline: 2px solid rgba(120, 150, 255, 0.85);
+        outline-offset: 2px;
+    }
+
+    .lang-btn.is-active {
+        background: linear-gradient(135deg, rgba(58, 160, 255, 0.9), rgba(108, 76, 255, 0.9));
+        color: white;
+        box-shadow: 0 10px 20px rgba(108, 76, 255, 0.25);
+    }
+
+
 /* Hero */
 
 .hero {
