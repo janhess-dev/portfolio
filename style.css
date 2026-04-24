@@ -96,7 +96,7 @@ button {
         transform: translateX(-50%) translateY(-80px);
         width: 1500px;
         height: 2800px;
-        background-image: url("portfolio-pic-vertical.jpg");
+        background-image: url("JPGs/portfolio-pic-vertical.jpg");
         background-repeat: no-repeat;
         background-size: contain;
         background-position: center top;
@@ -313,9 +313,9 @@ button {
 .hero-background {
     position: absolute;
     inset: 0;
-    /*    background-image: url("portfolio-pic.jpg");*/
-    /*    background-image: url("background_portfolio_face.jpg");*/
-    background-image: url("background_portfolio_face2.jpg");
+    /*    background-image: url("JPGs/portfolio-pic.jpg");*/
+    /*    background-image: url("JPGs/background_portfolio_face.jpg");*/
+    background-image: url("JPGs/background_portfolio_face2.jpg");
     background-size: cover;
     background-position: center;
 }
