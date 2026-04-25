@@ -189,6 +189,7 @@ button {
     font-size: 0.9rem;
     letter-spacing: 0.16em;
     backdrop-filter: blur(10px);
+    align-self: flex-start;
 }
 
 .project-tag {
@@ -1059,6 +1060,7 @@ button {
     border: 1px solid var(--glass-border);
     background: var(--glass-bg);
     backdrop-filter: blur(12px);
+    transition: border-color 0.25s ease, box-shadow 0.25s ease;
 }
 
     .detail-card h3 {
@@ -1071,6 +1073,62 @@ button {
     color: var(--color-text-muted);
     font-size: 1rem;
     line-height: 1.85;
+}
+
+.detail-card-flip {
+    position: relative;
+    padding: 0;
+    cursor: pointer;
+    perspective: 1400px;
+}
+
+    .detail-card:hover {
+        border-color: var(--glass-border-hover);
+        box-shadow: var(--shadow-card);
+    }
+
+    .detail-card-flip:focus-visible {
+        outline: none;
+        border-color: rgba(141, 183, 255, 0.55);
+        box-shadow: 0 0 0 3px rgba(108, 76, 255, 0.25), var(--shadow-card);
+    }
+
+.detail-card-inner {
+    position: relative;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: transform 0.7s cubic-bezier(0.2, 0.85, 0.2, 1);
+}
+
+    .detail-card-flip.is-flipped .detail-card-inner {
+        transform: rotateY(180deg);
+    }
+
+.detail-card-face {
+    min-height: 100%;
+    padding: 28px;
+    border-radius: inherit;
+    display: flex;
+    flex-direction: column;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+.detail-card-back {
+    position: absolute;
+    inset: 0;
+    transform: rotateY(180deg);
+}
+
+.detail-card-hint {
+    margin-top: auto;
+    padding-top: 22px;
+    color: var(--color-blue-soft);
+    font-size: 0.76rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    opacity: 0.9;
 }
 
 .detail-list {
@@ -1211,10 +1269,31 @@ button {
         opacity: 0.45;
     }
 
-    .page-enter, .page-exit-back{
+    .page-enter,
+    .page-exit-back {
         opacity: 1;
         transform: none;
     }
 
+    .detail-card-front,
+    .detail-card-back,
+    .detail-card-flip.is-flipped .detail-card-inner {
+        transform: none;
+    }
+
+    .detail-card-back {
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    .detail-card-flip.is-flipped .detail-card-front {
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    .detail-card-flip.is-flipped .detail-card-back {
+        opacity: 1;
+        visibility: visible;
+    }
 
 }

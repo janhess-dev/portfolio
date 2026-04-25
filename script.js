@@ -97,6 +97,37 @@ if (backLink && projectDetail) {
     });
 }
 
+/// Card Flip function
+
+function setFlipCardState(card, isFlipped) {
+    card.classList.toggle("is-flipped", isFlipped);
+    card.setAttribute("aria-pressed", String(isFlipped));
+
+    const front = card.querySelector(".detail-card-front");
+    const back = card.querySelector(".detail-card-back");
+
+    if (front && back) {
+        front.setAttribute("aria-hidden", String(isFlipped));
+        back.setAttribute("aria-hidden", String(!isFlipped));
+    }
+}
+
+document.querySelectorAll("[data-flip-card]").forEach((card) => {
+    setFlipCardState(card, false);
+
+    const toggleCard = () => {
+        setFlipCardState(card, !card.classList.contains("is-flipped"));
+    };
+
+    card.addEventListener("click", toggleCard);
+    card.addEventListener("keydown", (e) => {
+        if (e.key === "Enter" || e.key === " ") {
+            e.preventDefault();
+            toggleCard();
+        }
+    });
+});
+
 /// Language Localization / Function
 function setLanguage(lang) {
     document.documentElement.lang = lang;
