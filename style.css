@@ -1098,6 +1098,7 @@ button {
     position: relative;
     height: 100%;
     transform-style: preserve-3d;
+    -webkit-transform-style: preserve-3d;
     transition: transform 0.7s cubic-bezier(0.2, 0.85, 0.2, 1);
 }
 
@@ -1115,9 +1116,18 @@ button {
     backface-visibility: hidden;
 }
 
-.detail-card-back {
+.detail-card-back, .detail-card-front {
     position: absolute;
     inset: 0;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+}
+
+.detail-card-front {
+    transform: rotateY(0deg);
+}
+
+.detail-card-back {
     transform: rotateY(180deg);
 }
 
