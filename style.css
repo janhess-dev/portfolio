@@ -1080,7 +1080,7 @@ button {
     padding: 0;
     cursor: pointer;
     perspective: 1400px;
-    min-height: 420px;
+    min-height: 480px;
 }
 
     .detail-card:hover {
@@ -1199,7 +1199,7 @@ button {
     }
 
     .detail-card-flip {
-        min-height: 500px;
+        min-height: 560px;
     }
 
     .project-detail {
@@ -1223,7 +1223,7 @@ button {
     }
 
     .detail-card-flip {
-        min-height: 540px;
+        min-height: 610px;
     }
 }
 
@@ -1248,7 +1248,7 @@ button {
         }
 
     .detail-card-flip {
-        min-height: 620px;
+        min-height: 700px;
     }
 }
 
