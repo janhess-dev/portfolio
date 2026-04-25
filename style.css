@@ -1198,6 +1198,10 @@ button {
         grid-template-columns: 1fr;
     }
 
+    .detail-card-flip {
+        min-height: 500px;
+    }
+
     .project-detail {
         padding: 36px 20px 100px;
     }
@@ -1216,6 +1220,10 @@ button {
     .stats {
         grid-template-columns: 1fr;
         max-width: 420px;
+    }
+
+    .detail-card-flip {
+        min-height: 540px;
     }
 }
 
@@ -1238,6 +1246,10 @@ button {
             max-width: 280px;
             text-align: center;
         }
+
+    .detail-card-flip {
+        min-height: 620px;
+    }
 }
 
 /* prefers-reduced-motion */
