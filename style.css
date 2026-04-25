@@ -1080,6 +1080,7 @@ button {
     padding: 0;
     cursor: pointer;
     perspective: 1400px;
+    min-height: 420px;
 }
 
     .detail-card:hover {

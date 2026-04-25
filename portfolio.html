@@ -40,11 +40,12 @@
                         </p>
 
                         <div class="project-stack project-stack-detail">
-                            <span>Frontend Development</span>
-                            <span>Semantic HTML</span>
-                            <span>Responsive Design</span>
-                            <span>Localization / i18n</span>
-                            <span>UI Architecture</span>
+                            <span data-i18n="portfolioPage.hero.stack_frontend">Frontend Development</span>
+                            <span data-i18n="portfolioPage.hero.stack_semantic">Semantic HTML</span>
+                            <span data-i18n="portfolioPage.hero.stack_responsive">Responsive Design</span>
+                            <span data-i18n="portfolioPage.hero.stack_localization">Localization / i18n</span>
+                            <span data-i18n="portfolioPage.hero.stack_architecture">UI Architecture</span>
+                            <span data-i18n="portfolioPage.hero.stack_git">VCS / Git</span>
                         </div>
 
                         <div class="project-detail-actions">
@@ -170,6 +171,34 @@
                     <article class="detail-card detail-card-flip" data-flip-card tabindex="0" role="button" aria-pressed="false" data-i18n-aria-label="portfolioPage.flip.card_label">
                         <div class="detail-card-inner">
                             <div class="detail-card-face detail-card-front">
+                                <p class="section-label" data-i18n="portfolioPage.git.label">Version Control (Git)</p>
+                                <h3 data-i18n="portfolioPage.git.heading">How I use Git in this project</h3>
+                                <ul class="detail-list">
+                                    <li data-i18n="portfolioPage.git.item_1">Track progress with commits instead of creating manual folder backups</li>
+                                    <li data-i18n="portfolioPage.git.item_2">Use staging to separate finished work from half-finished changes</li>
+                                    <li data-i18n="portfolioPage.git.item_3">Keep local-only files like .vs out of the repository with .gitignore</li>
+                                    <li data-i18n="portfolioPage.git.item_4">Understand the basics of branches, fetch, push, pull, and pull requests</li>
+                                </ul>
+                                <p class="detail-card-hint" data-i18n="portfolioPage.flip.hint_front">Click to flip</p>
+                            </div>
+
+                            <div class="detail-card-face detail-card-back" aria-hidden="true">
+                                <p class="section-label" data-i18n="portfolioPage.git.back.label">Examples</p>
+                                <h3 data-i18n="portfolioPage.git.back.heading">How I applied it in this project</h3>
+                                <ul class="detail-list">
+                                    <li data-i18n="portfolioPage.git.back.item_1">Added .gitignore to keep .vs/ and other local-only files out of the repository</li>
+                                    <li data-i18n="portfolioPage.git.back.item_2">Used clearer commits to separate UI, localization, and accessibility changes</li>
+                                    <li data-i18n="portfolioPage.git.back.item_3">Checked changes with git status and git diff before staging</li>
+                                    <li data-i18n="portfolioPage.git.back.item_4">Used Git basics and personal workflow notes to structure progress more safely</li>
+                                </ul>
+                                <p class="detail-card-hint" data-i18n="portfolioPage.flip.hint_back">Click to return</p>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="detail-card detail-card-flip" data-flip-card tabindex="0" role="button" aria-pressed="false" data-i18n-aria-label="portfolioPage.flip.card_label">
+                        <div class="detail-card-inner">
+                            <div class="detail-card-face detail-card-front">
                                 <p class="section-label" data-i18n="portfolioPage.accessibility.label">Accessibility</p>
                                 <h3 data-i18n="portfolioPage.accessibility.heading">What I improved</h3>
                                 <ul class="detail-list">
@@ -193,7 +222,9 @@
                             </div>
                         </div>
                     </article>
+                </section>
 
+                <section class="project-grid-two">
                     <article class="detail-card detail-card-flip" data-flip-card tabindex="0" role="button" aria-pressed="false" data-i18n-aria-label="portfolioPage.flip.card_label">
                         <div class="detail-card-inner">
                             <div class="detail-card-face detail-card-front">
@@ -216,9 +247,7 @@
                             </div>
                         </div>
                     </article>
-                </section>
 
-                <section class="project-grid-two">
                     <article class="detail-card detail-card-flip" data-flip-card tabindex="0" role="button" aria-pressed="false" data-i18n-aria-label="portfolioPage.flip.card_label">
                         <div class="detail-card-inner">
                             <div class="detail-card-face detail-card-front">
@@ -240,7 +269,9 @@
                             </div>
                         </div>
                     </article>
+                </section>
 
+                <section class="project-grid-two">
                     <article class="detail-card detail-card-flip" data-flip-card tabindex="0" role="button" aria-pressed="false" data-i18n-aria-label="portfolioPage.flip.card_label">
                         <div class="detail-card-inner">
                             <div class="detail-card-face detail-card-front">
@@ -264,6 +295,7 @@
                         </div>
                     </article>
                 </section>
+
             </div>
         </main>
     </div>
