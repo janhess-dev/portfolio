@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title data-i18n="project2Page.meta.title">Drakentype | Jan He&szlig;</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+          rel="stylesheet" />
+
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body class="project-page">
+
+    <header class="site-header">
+        <nav class="topbar">
+            <div class="lang-switch" aria-label="Language switcher" data-i18n-aria-label="topbar.language_switcher">
+                <button type="button" id="langDe" class="lang-btn">DE</button>
+                <button type="button" id="langEn" class="lang-btn">EN</button>
+            </div>
+        </nav>
+    </header>
+
+    <div class="page-flow">
+        <main class="project-detail page-enter">
+            <div class="project-detail-container">
+                <a href="index.html#projects" class="back-link" data-i18n="project2Page.back_link">&larr; Back to portfolio</a>
+
+                <section class="project-hero">
+                    <div class="project-hero-copy">
+                        <p class="section-label" data-i18n="project2Page.hero.label">Unity / C# Prototype</p>
+                        <h1 data-i18n="project2Page.hero.title">Drakentype</h1>
+                        <p class="project-detail-lead" data-i18n="project2Page.hero.lead">
+                            A new Unity/C# 2D prototype currently focused on concept building, first player controls, and the core question of how movement and interaction should feel from the beginning.
+                        </p>
+
+                        <div class="project-stack project-stack-detail">
+                            <span data-i18n="project2Page.hero.stack_unity">Unity</span>
+                            <span data-i18n="project2Page.hero.stack_csharp">C#</span>
+                            <span data-i18n="project2Page.hero.stack_input">Input System</span>
+                            <span data-i18n="project2Page.hero.stack_controller">Player Controller</span>
+                            <span data-i18n="project2Page.hero.stack_status">In Progress</span>
+                        </div>
+
+                        <div class="project-detail-actions">
+                            <a href="#" class="btn btn-primary" data-i18n="project2Page.hero.link_demo">Prototype in Progress</a>
+                            <a href="#" class="btn btn-primary" data-i18n="project2Page.hero.link_source">Source Code</a>
+                        </div>
+                    </div>
+
+                    <div class="project-hero-media">
+                        <img class="zoomable-image" src="JPGs/Drakentype.jpg" alt="Screenshot of Drakentype" data-i18n-alt="project2Page.hero.image_alt" />
+                    </div>
+                </section>
+
+                <section class="project-section">
+                    <div class="section-header">
+                        <p class="section-label" data-i18n="project2Page.overview.label">Overview</p>
+                        <h2 data-i18n="project2Page.overview.heading">What this project is about</h2>
+                        <p class="section-text" data-i18n="project2Page.overview.text">
+                            This second project is a Unity/C# 2D prototype currently focused on concept building and first playable foundations. Right now the important questions are what kind of game it should become, where the player exists inside that world, and how movement and control should feel from the start.
+                        </p>
+                    </div>
+                </section>
+
+                <section class="project-grid-two">
+                    <article class="detail-card detail-card-flip" data-flip-card tabindex="0" role="button" aria-pressed="false" data-i18n-aria-label="project2Page.flip.card_label">
+                        <div class="detail-card-inner">
+                            <div class="detail-card-face detail-card-front">
+                                <p class="section-label" data-i18n="project2Page.goals.label">Goals</p>
+                                <h3 data-i18n="project2Page.goals.heading">What this project should achieve</h3>
+                                <ul class="detail-list">
+                                    <li data-i18n="project2Page.goals.item_1">Define the core idea before the project spreads into too many systems</li>
+                                    <li data-i18n="project2Page.goals.item_2">Establish who the player is and what situation they are in</li>
+                                    <li data-i18n="project2Page.goals.item_3">Build the first movement and control foundation in a playable way</li>
+                                    <li data-i18n="project2Page.goals.item_4">Prepare a prototype that can grow into a clearer gameplay loop later</li>
+                                </ul>
+                                <p class="detail-card-hint" data-i18n="project2Page.flip.hint_front">Click to flip</p>
+                            </div>
+                            <div class="detail-card-face detail-card-back" aria-hidden="true">
+                                <p class="section-label" data-i18n="project2Page.flip.back_label">Blueprint</p>
+                                <h3 data-i18n="project2Page.goals.heading">What this project should achieve</h3>
+                                <p class="detail-text" data-i18n="project2Page.flip.back_text">This back side is prepared for examples, screenshots, challenges, or deeper notes that can be added later.</p>
+                                <p class="detail-card-hint" data-i18n="project2Page.flip.hint_back">Click to return</p>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="detail-card detail-card-flip" data-flip-card tabindex="0" role="button" aria-pressed="false" data-i18n-aria-label="project2Page.flip.card_label">
+                        <div class="detail-card-inner">
+                            <div class="detail-card-face detail-card-front">
+                                <p class="section-label" data-i18n="project2Page.focus.label">Focus</p>
+                                <h3 data-i18n="project2Page.focus.heading">What I wanted to clarify first</h3>
+                                <ul class="detail-list">
+                                    <li data-i18n="project2Page.focus.item_1">What the player actually does and how that should feel</li>
+                                    <li data-i18n="project2Page.focus.item_2">How movement and rotation should be controlled from the beginning</li>
+                                    <li data-i18n="project2Page.focus.item_3">Building concept and player control before deeper gameplay systems</li>
+                                    <li data-i18n="project2Page.focus.item_4">Keeping the first implementation small enough to test and improve quickly</li>
+                                </ul>
+                                <p class="detail-card-hint" data-i18n="project2Page.flip.hint_front">Click to flip</p>
+                            </div>
+                            <div class="detail-card-face detail-card-back" aria-hidden="true">
+                                <p class="section-label" data-i18n="project2Page.flip.back_label">Blueprint</p>
+                                <h3 data-i18n="project2Page.focus.heading">What I wanted to clarify first</h3>
+                                <p class="detail-text" data-i18n="project2Page.flip.back_text">This back side is prepared for examples, screenshots, challenges, or deeper notes that can be added later.</p>
+                                <p class="detail-card-hint" data-i18n="project2Page.flip.hint_back">Click to return</p>
+                            </div>
+                        </div>
+                    </article>
+                </section>
+
+                <section class="project-grid-two">
+                    <article class="detail-card detail-card-flip" data-flip-card tabindex="0" role="button" aria-pressed="false" data-i18n-aria-label="project2Page.flip.card_label">
+                        <div class="detail-card-inner">
+                            <div class="detail-card-face detail-card-front">
+                                <p class="section-label" data-i18n="project2Page.features.label">Features</p>
+                                <h3 data-i18n="project2Page.features.heading">What is already part of the prototype</h3>
+                                <ul class="detail-list">
+                                    <li data-i18n="project2Page.features.item_1">Input System integration as the first control foundation</li>
+                                    <li data-i18n="project2Page.features.item_2">A PlayerMovement / controller setup for the first playable behavior</li>
+                                    <li data-i18n="project2Page.features.item_3">Movement with W and S</li>
+                                    <li data-i18n="project2Page.features.item_4">Rotation with A and D</li>
+                                </ul>
+                                <p class="detail-card-hint" data-i18n="project2Page.flip.hint_front">Click to flip</p>
+                            </div>
+                            <div class="detail-card-face detail-card-back" aria-hidden="true">
+                                <p class="section-label" data-i18n="project2Page.flip.back_label">Blueprint</p>
+                                <h3 data-i18n="project2Page.features.heading">What is already part of the prototype</h3>
+                                <p class="detail-text" data-i18n="project2Page.flip.back_text">This back side is prepared for examples, screenshots, challenges, or deeper notes that can be added later.</p>
+                                <p class="detail-card-hint" data-i18n="project2Page.flip.hint_back">Click to return</p>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="detail-card detail-card-flip" data-flip-card tabindex="0" role="button" aria-pressed="false" data-i18n-aria-label="project2Page.flip.card_label">
+                        <div class="detail-card-inner">
+                            <div class="detail-card-face detail-card-front">
+                                <p class="section-label" data-i18n="project2Page.tech.label">Tech Stack</p>
+                                <h3 data-i18n="project2Page.tech.heading">What I am building this with</h3>
+                                <ul class="detail-list">
+                                    <li data-i18n="project2Page.tech.item_1">Unity as the engine and test environment</li>
+                                    <li data-i18n="project2Page.tech.item_2">C# for player behavior and gameplay logic</li>
+                                    <li data-i18n="project2Page.tech.item_3">Input System for clearer action-based controls</li>
+                                    <li data-i18n="project2Page.tech.item_4">A player controller script as the first gameplay foundation</li>
+                                </ul>
+                                <p class="detail-card-hint" data-i18n="project2Page.flip.hint_front">Click to flip</p>
+                            </div>
+                            <div class="detail-card-face detail-card-back" aria-hidden="true">
+                                <p class="section-label" data-i18n="project2Page.flip.back_label">Blueprint</p>
+                                <h3 data-i18n="project2Page.tech.heading">What I am building this with</h3>
+                                <p class="detail-text" data-i18n="project2Page.flip.back_text">This back side is prepared for examples, screenshots, challenges, or deeper notes that can be added later.</p>
+                                <p class="detail-card-hint" data-i18n="project2Page.flip.hint_back">Click to return</p>
+                            </div>
+                        </div>
+                    </article>
+                </section>
+
+                <section class="project-grid-two">
+                    <article class="detail-card detail-card-flip" data-flip-card tabindex="0" role="button" aria-pressed="false" data-i18n-aria-label="project2Page.flip.card_label">
+                        <div class="detail-card-inner">
+                            <div class="detail-card-face detail-card-front">
+                                <p class="section-label" data-i18n="project2Page.unity.label">Unity</p>
+                                <h3 data-i18n="project2Page.unity.heading">How the engine is used here</h3>
+                                <ul class="detail-list">
+                                    <li data-i18n="project2Page.unity.item_1">Use one test scene as the first space to try out player behavior</li>
+                                    <li data-i18n="project2Page.unity.item_2">Iterate quickly on movement, rotation, and control feel</li>
+                                    <li data-i18n="project2Page.unity.item_3">Keep the project modular enough to add systems later</li>
+                                    <li data-i18n="project2Page.unity.item_4">Build a foundation before expanding into bigger content</li>
+                                </ul>
+                                <p class="detail-card-hint" data-i18n="project2Page.flip.hint_front">Click to flip</p>
+                            </div>
+                            <div class="detail-card-face detail-card-back" aria-hidden="true">
+                                <p class="section-label" data-i18n="project2Page.flip.back_label">Blueprint</p>
+                                <h3 data-i18n="project2Page.unity.heading">How the engine is used here</h3>
+                                <p class="detail-text" data-i18n="project2Page.flip.back_text">This back side is prepared for examples, screenshots, challenges, or deeper notes that can be added later.</p>
+                                <p class="detail-card-hint" data-i18n="project2Page.flip.hint_back">Click to return</p>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="detail-card detail-card-flip" data-flip-card tabindex="0" role="button" aria-pressed="false" data-i18n-aria-label="project2Page.flip.card_label">
+                        <div class="detail-card-inner">
+                            <div class="detail-card-face detail-card-front">
+                                <p class="section-label" data-i18n="project2Page.csharp.label">C#</p>
+                                <h3 data-i18n="project2Page.csharp.heading">How I use scripts here</h3>
+                                <ul class="detail-list">
+                                    <li data-i18n="project2Page.csharp.item_1">Handle player movement and rotation through code instead of editor-only setup</li>
+                                    <li data-i18n="project2Page.csharp.item_2">Translate input into predictable and readable gameplay behavior</li>
+                                    <li data-i18n="project2Page.csharp.item_3">Keep the first logic extendable for future systems</li>
+                                    <li data-i18n="project2Page.csharp.item_4">Use code as the base for control, feel, and later gameplay decisions</li>
+                                </ul>
+                                <p class="detail-card-hint" data-i18n="project2Page.flip.hint_front">Click to flip</p>
+                            </div>
+                            <div class="detail-card-face detail-card-back" aria-hidden="true">
+                                <p class="section-label" data-i18n="project2Page.flip.back_label">Blueprint</p>
+                                <h3 data-i18n="project2Page.csharp.heading">How I use scripts here</h3>
+                                <p class="detail-text" data-i18n="project2Page.flip.back_text">This back side is prepared for examples, screenshots, challenges, or deeper notes that can be added later.</p>
+                                <p class="detail-card-hint" data-i18n="project2Page.flip.hint_back">Click to return</p>
+                            </div>
+                        </div>
+                    </article>
+                </section>
+
+                <section class="project-grid-two">
+                    <article class="detail-card detail-card-flip" data-flip-card tabindex="0" role="button" aria-pressed="false" data-i18n-aria-label="project2Page.flip.card_label">
+                        <div class="detail-card-inner">
+                            <div class="detail-card-face detail-card-front">
+                                <p class="section-label" data-i18n="project2Page.input.label">Input System</p>
+                                <h3 data-i18n="project2Page.input.heading">Why input was one of the first systems</h3>
+                                <ul class="detail-list">
+                                    <li data-i18n="project2Page.input.item_1">Separate player actions more clearly from raw key checks</li>
+                                    <li data-i18n="project2Page.input.item_2">Define movement input as an actual system instead of a quick hack</li>
+                                    <li data-i18n="project2Page.input.item_3">Make later expansion easier when more actions are added</li>
+                                    <li data-i18n="project2Page.input.item_4">Start with simple controls, but leave room for a stronger setup later</li>
+                                </ul>
+                                <p class="detail-card-hint" data-i18n="project2Page.flip.hint_front">Click to flip</p>
+                            </div>
+                            <div class="detail-card-face detail-card-back" aria-hidden="true">
+                                <p class="section-label" data-i18n="project2Page.flip.back_label">Blueprint</p>
+                                <h3 data-i18n="project2Page.input.heading">Why input was one of the first systems</h3>
+                                <p class="detail-text" data-i18n="project2Page.flip.back_text">This back side is prepared for examples, screenshots, challenges, or deeper notes that can be added later.</p>
+                                <p class="detail-card-hint" data-i18n="project2Page.flip.hint_back">Click to return</p>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="detail-card detail-card-flip" data-flip-card tabindex="0" role="button" aria-pressed="false" data-i18n-aria-label="project2Page.flip.card_label">
+                        <div class="detail-card-inner">
+                            <div class="detail-card-face detail-card-front">
+                                <p class="section-label" data-i18n="project2Page.controller.label">Player Controller</p>
+                                <h3 data-i18n="project2Page.controller.heading">Why the controller matters early</h3>
+                                <ul class="detail-list">
+                                    <li data-i18n="project2Page.controller.item_1">Handle movement and rotation in one first controller setup</li>
+                                    <li data-i18n="project2Page.controller.item_2">Establish the first playable player behavior as soon as possible</li>
+                                    <li data-i18n="project2Page.controller.item_3">Test feel before building more advanced systems on top</li>
+                                    <li data-i18n="project2Page.controller.item_4">Use the controller as the base for future interaction and gameplay logic</li>
+                                </ul>
+                                <p class="detail-card-hint" data-i18n="project2Page.flip.hint_front">Click to flip</p>
+                            </div>
+                            <div class="detail-card-face detail-card-back" aria-hidden="true">
+                                <p class="section-label" data-i18n="project2Page.flip.back_label">Blueprint</p>
+                                <h3 data-i18n="project2Page.controller.heading">Why the controller matters early</h3>
+                                <p class="detail-text" data-i18n="project2Page.flip.back_text">This back side is prepared for examples, screenshots, challenges, or deeper notes that can be added later.</p>
+                                <p class="detail-card-hint" data-i18n="project2Page.flip.hint_back">Click to return</p>
+                            </div>
+                        </div>
+                    </article>
+                </section>
+
+                <section class="project-grid-two">
+                    <article class="detail-card detail-card-flip" data-flip-card tabindex="0" role="button" aria-pressed="false" data-i18n-aria-label="project2Page.flip.card_label">
+                        <div class="detail-card-inner">
+                            <div class="detail-card-face detail-card-front">
+                                <p class="section-label" data-i18n="project2Page.learning.label">Learning</p>
+                                <h3 data-i18n="project2Page.learning.heading">What I am already learning</h3>
+                                <ul class="detail-list">
+                                    <li data-i18n="project2Page.learning.item_1">Concept questions matter early, even before bigger gameplay systems exist</li>
+                                    <li data-i18n="project2Page.learning.item_2">The feel of a controller can already shape the direction of the whole project</li>
+                                    <li data-i18n="project2Page.learning.item_3">Simple movement systems still involve real design and implementation decisions</li>
+                                    <li data-i18n="project2Page.learning.item_4">Starting small makes testing and iteration much easier</li>
+                                </ul>
+                                <p class="detail-card-hint" data-i18n="project2Page.flip.hint_front">Click to flip</p>
+                            </div>
+                            <div class="detail-card-face detail-card-back" aria-hidden="true">
+                                <p class="section-label" data-i18n="project2Page.flip.back_label">Blueprint</p>
+                                <h3 data-i18n="project2Page.learning.heading">What I am already learning</h3>
+                                <p class="detail-text" data-i18n="project2Page.flip.back_text">This back side is prepared for examples, screenshots, challenges, or deeper notes that can be added later.</p>
+                                <p class="detail-card-hint" data-i18n="project2Page.flip.hint_back">Click to return</p>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="detail-card detail-card-flip" data-flip-card tabindex="0" role="button" aria-pressed="false" data-i18n-aria-label="project2Page.flip.card_label">
+                        <div class="detail-card-inner">
+                            <div class="detail-card-face detail-card-front">
+                                <p class="section-label" data-i18n="project2Page.next_steps.label">Next Steps</p>
+                                <h3 data-i18n="project2Page.next_steps.heading">What should come next</h3>
+                                <ul class="detail-list">
+                                    <li data-i18n="project2Page.next_steps.item_1">Define the concept and player context more clearly</li>
+                                    <li data-i18n="project2Page.next_steps.item_2">Expand from movement into the first interaction or challenge</li>
+                                    <li data-i18n="project2Page.next_steps.item_3">Build a first small gameplay loop around the controller foundation</li>
+                                    <li data-i18n="project2Page.next_steps.item_4">Replace placeholders with real prototype progress over time</li>
+                                </ul>
+                                <p class="detail-card-hint" data-i18n="project2Page.flip.hint_front">Click to flip</p>
+                            </div>
+                            <div class="detail-card-face detail-card-back" aria-hidden="true">
+                                <p class="section-label" data-i18n="project2Page.flip.back_label">Blueprint</p>
+                                <h3 data-i18n="project2Page.next_steps.heading">What should come next</h3>
+                                <p class="detail-text" data-i18n="project2Page.flip.back_text">This back side is prepared for examples, screenshots, challenges, or deeper notes that can be added later.</p>
+                                <p class="detail-card-hint" data-i18n="project2Page.flip.hint_back">Click to return</p>
+                            </div>
+                        </div>
+                    </article>
+                </section>
+            </div>
+        </main>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-inner">
+            <p data-i18n="footer.text">&copy; 2026 Jan He&szlig; - Built with HTML, CSS &amp; JavaScript</p>
+        </div>
+    </footer>
+
+    <button id="backToTop" aria-label="Back to top" data-i18n-aria-label="common.back_to_top">
+        &uarr;
+    </button>
+
+    <div id="imageModal">
+        <img id="modalImg" src="" alt="Preview" data-i18n-alt="common.preview_alt">
+    </div>
+    <script src="translations.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
