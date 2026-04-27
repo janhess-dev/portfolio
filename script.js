@@ -6,6 +6,10 @@ const contact = byId("contact");
 const btn = byId("backToTop");
 const modal = byId("imageModal");
 const modalImg = byId("modalImg");
+const closeImageModalBtn = byId("closeImageModal");
+const prototypeModal = byId("prototypeModal");
+const prototypeFrame = byId("prototypeFrame");
+const closePrototypeModalBtn = byId("closePrototypeModal");
 const backLink = $(".back-link");
 const projectDetail = $(".project-detail");
 const langDe = byId("langDe");
@@ -17,6 +21,13 @@ const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)
 const getScrollBehavior = () => {
     return prefersReducedMotion.matches ? "auto" : "smooth";
 };
+
+function syncBodyScrollLock() {
+    const isImageModalOpen = modal?.classList.contains("show");
+    const isPrototypeModalOpen = prototypeModal?.classList.contains("show");
+
+    document.body.style.overflow = isImageModalOpen || isPrototypeModalOpen ? "hidden" : "";
+}
 
 function scrollToSection(section, offset = 80) {
     if (!section) return;
@@ -59,26 +70,89 @@ if (btn) {
 if (modal && modalImg) {
     const closeModal = () => {
         modal.classList.remove("show");
-        document.body.style.overflow = "";
+        modal.setAttribute("aria-hidden", "true");
+        modalImg.src = "";
+        syncBodyScrollLock();
     };
 
     document.querySelectorAll(".zoomable-image").forEach((img) => {
         img.addEventListener("click", () => {
             modal.classList.add("show");
+            modal.setAttribute("aria-hidden", "false");
             modalImg.src = img.dataset.full || img.src;
             modalImg.alt = img.alt || "";
-            document.body.style.overflow = "hidden";
+            syncBodyScrollLock();
         });
     });
 
-    modal.addEventListener("click", closeModal);
+    if (closeImageModalBtn) {
+        closeImageModalBtn.addEventListener("click", closeModal);
+    }
 
-    document.addEventListener("keydown", (e) => {
-        if (e.key === "Escape" && modal.classList.contains("show")) {
+    modal.addEventListener("click", (e) => {
+        if (e.target === modal) {
             closeModal();
         }
     });
 }
+
+if (prototypeModal && prototypeFrame) {
+    const openPrototypeModal = (src) => {
+        prototypeFrame.src = src;
+        prototypeModal.classList.add("show");
+        prototypeModal.setAttribute("aria-hidden", "false");
+        syncBodyScrollLock();
+    };
+
+    const closePrototypeModal = () => {
+        prototypeModal.classList.remove("show");
+        prototypeModal.setAttribute("aria-hidden", "true");
+        prototypeFrame.src = "";
+        syncBodyScrollLock();
+    };
+
+    document.querySelectorAll("[data-prototype-modal-launcher]").forEach((launcher) => {
+        launcher.addEventListener("click", (e) => {
+            e.preventDefault();
+            openPrototypeModal(launcher.href);
+        });
+    });
+
+    if (closePrototypeModalBtn) {
+        closePrototypeModalBtn.addEventListener("click", closePrototypeModal);
+    }
+
+    prototypeModal.addEventListener("click", (e) => {
+        if (e.target === prototypeModal) {
+            closePrototypeModal();
+        }
+    });
+}
+
+document.addEventListener("keydown", (e) => {
+    if (e.key !== "Escape") return;
+
+    if (prototypeModal?.classList.contains("show")) {
+        prototypeModal.classList.remove("show");
+        prototypeModal.setAttribute("aria-hidden", "true");
+
+        if (prototypeFrame) {
+            prototypeFrame.src = "";
+        }
+
+        syncBodyScrollLock();
+        return;
+    }
+
+    if (modal?.classList.contains("show")) {
+        modal.classList.remove("show");
+        modal.setAttribute("aria-hidden", "true");
+        if (modalImg) {
+            modalImg.src = "";
+        }
+        syncBodyScrollLock();
+    }
+});
 
 if (backLink && projectDetail) {
     backLink.addEventListener("click", (e) => {

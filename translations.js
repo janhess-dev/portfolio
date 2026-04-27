@@ -5,6 +5,8 @@
         "footer.text": "© 2026 Jan Heß - Built with HTML, CSS & JavaScript",
         "common.back_to_top": "Back to top",
         "common.preview_alt": "Preview",
+        "common.image_preview": "Image Preview",
+        "common.close_modal": "Close modal",
 
         // index.html
         "meta.title": "Portfolio | Jan Heß",
@@ -79,6 +81,7 @@
         "project2Page.hero.link_demo": "Prototype in Progress",
         "project2Page.hero.link_source": "Source Code",
         "project2Page.hero.image_alt": "Screenshot of Drakentype",
+        "project2Page.prototype_modal.title": "Drakentype Prototype",
         "project2Page.overview.label": "Overview",
         "project2Page.overview.heading": "What this project is about",
         "project2Page.overview.text": "This second project is a Unity/C# 2D prototype currently focused on concept building and first playable foundations. Right now the important questions are what kind of game it should become, where the player exists inside that world, and how movement and control should feel from the start.",
@@ -418,6 +421,8 @@
         "footer.text": "© 2026 Jan Heß - Entwickelt mit HTML, CSS & JavaScript",
         "common.back_to_top": "Nach oben",
         "common.preview_alt": "Vorschau",
+        "common.image_preview": "Bildvorschau",
+        "common.close_modal": "Modal schließen",
 
         // index.html
         "meta.title": "Portfolio | Jan Heß",
@@ -492,6 +497,7 @@
         "project2Page.hero.link_demo": "Prototyp in Arbeit",
         "project2Page.hero.link_source": "Quellcode",
         "project2Page.hero.image_alt": "Screenshot von Drakentype",
+        "project2Page.prototype_modal.title": "Drakentype Prototyp",
         "project2Page.overview.label": "Überblick",
         "project2Page.overview.heading": "Worum es in diesem Projekt geht",
         "project2Page.overview.text": "Dieses zweite Projekt ist ein Unity-/C#-2D-Prototyp mit aktuellem Fokus auf Konzeptaufbau und erste spielbare Grundlagen. Im Moment sind die wichtigen Fragen, was für ein Spiel daraus werden soll, wo sich der Spieler in dieser Welt befindet und wie sich Bewegung und Steuerung von Anfang an anfühlen sollen.",

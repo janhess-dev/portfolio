@@ -46,7 +46,7 @@
                         </div>
 
                         <div class="project-detail-actions">
-                            <a href="webgl/Drakentype/index.html" class="btn btn-primary" target="_blank" rel="noopener noreferrer" data-i18n="project2Page.hero.link_demo">Prototype in Progress</a>
+                            <a href="webgl/Drakentype/index.html" class="btn btn-primary" data-prototype-modal-launcher data-i18n="project2Page.hero.link_demo">Prototype in Progress</a>
                             <a href="#" class="btn btn-primary" data-i18n="project2Page.hero.link_source">Source Code</a>
                         </div>
                     </div>
@@ -309,8 +309,32 @@
         &uarr;
     </button>
 
-    <div id="imageModal">
-        <img id="modalImg" src="" alt="Preview" data-i18n-alt="common.preview_alt">
+    <div id="imageModal" aria-hidden="true">
+        <div class="prototype-modal-shell image-modal-shell" role="dialog" aria-modal="true" aria-labelledby="imageModalTitle">
+            <div class="prototype-modal-header">
+                <h2 id="imageModalTitle" data-i18n="common.image_preview">Image Preview</h2>
+                <button type="button" id="closeImageModal" class="prototype-modal-close" data-i18n-aria-label="common.close_modal" aria-label="Close modal">
+                    &times;
+                </button>
+            </div>
+            <div class="image-modal-frame">
+                <img id="modalImg" src="" alt="Preview" data-i18n-alt="common.preview_alt">
+            </div>
+        </div>
+    </div>
+
+    <div id="prototypeModal" aria-hidden="true">
+        <div class="prototype-modal-shell" role="dialog" aria-modal="true" aria-labelledby="prototypeModalTitle">
+            <div class="prototype-modal-header">
+                <h2 id="prototypeModalTitle" data-i18n="project2Page.prototype_modal.title">Drakentype Prototype</h2>
+                <button type="button" id="closePrototypeModal" class="prototype-modal-close" data-i18n-aria-label="common.close_modal" aria-label="Close modal">
+                    &times;
+                </button>
+            </div>
+            <div class="prototype-modal-frame">
+                <iframe id="prototypeFrame" src="" title="Drakentype Prototype"></iframe>
+            </div>
+        </div>
     </div>
     <script src="translations.js"></script>
     <script src="script.js"></script>
