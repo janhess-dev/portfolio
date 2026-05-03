@@ -302,8 +302,6 @@ setLanguage(savedLanguage);
 
 
 //// Contact form
-
-
 function showFormFeedback(message, type = "error") {
     if (!feedback) return;
 
