@@ -1,7 +1,8 @@
 {
+  "$schema": "https://openapi.vercel.sh/vercel.json",
   "headers": [
     {
-      "source": "/webgl/Drakentype/Build/(.*)\\.js\\.br",
+      "source": "/webgl/Drakentype/Build/Drakentype.framework.js.br",
       "headers": [
         {
           "key": "Content-Encoding",
@@ -9,12 +10,12 @@
         },
         {
           "key": "Content-Type",
-          "value": "application/javascript; charset=utf-8"
+          "value": "text/javascript; charset=utf-8"
         }
       ]
     },
     {
-      "source": "/webgl/Drakentype/Build/(.*)\\.wasm\\.br",
+      "source": "/webgl/Drakentype/Build/Drakentype.wasm.br",
       "headers": [
         {
           "key": "Content-Encoding",
@@ -27,7 +28,7 @@
       ]
     },
     {
-      "source": "/webgl/Drakentype/Build/(.*)\\.data\\.br",
+      "source": "/webgl/Drakentype/Build/Drakentype.data.br",
       "headers": [
         {
           "key": "Content-Encoding",
