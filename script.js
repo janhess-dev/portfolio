@@ -18,6 +18,15 @@ const hasTranslations = typeof translations !== "undefined";
 
 const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
 
+const form = document.querySelector(".contact-form");
+const nameInput = document.querySelector('input[name="name"]');
+const emailInput = document.querySelector('input[name="email"]');
+const messageInput = document.querySelector('textarea[name="message"]');
+const feedback = document.querySelector("#contactFormFeedback");
+const submitButton = document.querySelector(".contact-form-submit");
+
+let feedbackTimeout;
+
 const getScrollBehavior = () => {
     return prefersReducedMotion.matches ? "auto" : "smooth";
 };
@@ -294,14 +303,6 @@ setLanguage(savedLanguage);
 
 //// Contact form
 
-const form = document.querySelector(".contact-form");
-const nameInput = document.querySelector('input[name="name"]');
-const emailInput = document.querySelector('input[name="email"]');
-const messageInput = document.querySelector('textarea[name="message"]');
-const feedback = document.querySelector("#contactFormFeedback");
-const submitButton = document.querySelector(".contact-form-submit");
-
-let feedbackTimeout;
 
 function showFormFeedback(message) {
     if (!feedback) return;
