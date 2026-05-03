@@ -83,7 +83,7 @@
         "contact.form.feedback.email_invalid": "Please enter a valid email address.",
         "contact.form.feedback.message_required": "Please enter a message.",
         "contact.form.feedback.success_placeholder": "Form looks good. Submission comes next.",
-        "contact.form.feedback.submit_success": "Your message was received. The next step is wiring this flow to a real email delivery setup.",
+        "contact.form.feedback.submit_success": "Thanks, your message has been sent. I'll get back to you as soon as I can.",
         "contact.form.feedback.submit_error": "Something went wrong while sending. Please try again.",
 
         // project2.html
@@ -518,7 +518,7 @@
         "contact.form.feedback.email_invalid": "Bitte gib eine gültige E-Mail-Adresse ein.",
         "contact.form.feedback.message_required": "Bitte gib eine Nachricht ein.",
         "contact.form.feedback.success_placeholder": "Das Formular sieht gut aus. Als Nächstes folgt die echte Übermittlung.",
-        "contact.form.feedback.submit_success": "Deine Nachricht wurde empfangen. Als Nächstes wird dieser Flow an eine echte E-Mail-Zustellung angebunden.",
+        "contact.form.feedback.submit_success": "Danke, deine Nachricht wurde gesendet. Ich melde mich so bald wie möglich zurück.",
         "contact.form.feedback.submit_error": "Beim Senden ist etwas schiefgelaufen. Bitte versuche es erneut.",
 
         // project2.html

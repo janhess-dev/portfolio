@@ -889,6 +889,12 @@ button {
     display: block;
 }
 
+.contact-form-feedback.is-success {
+    border-color: rgba(94, 224, 134, 0.34);
+    background: rgba(68, 201, 111, 0.12);
+    color: #8df0ae;
+}
+
 .contact-form-note {
     margin-top: 18px;
     color: rgba(255, 255, 255, 0.62);

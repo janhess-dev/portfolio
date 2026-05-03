@@ -304,16 +304,18 @@ setLanguage(savedLanguage);
 //// Contact form
 
 
-function showFormFeedback(message) {
+function showFormFeedback(message, type = "error") {
     if (!feedback) return;
 
     clearTimeout(feedbackTimeout);
 
     feedback.textContent = message;
+    feedback.classList.toggle("is-success", type === "success");
     feedback.classList.add("show");
 
     feedbackTimeout = setTimeout(() => {
         feedback.classList.remove("show");
+        feedback.classList.remove("is-success");
         feedback.textContent = "";
     }, 10000);
 }
@@ -391,7 +393,8 @@ async function handleContactFormSubmit(event) {
 
         form.reset();
         showFormFeedback(
-            getTranslation(data.messageKey || "contact.form.feedback.submit_success")
+            getTranslation(data.messageKey || "contact.form.feedback.submit_success"),
+            "success"
         );
     } catch {
         showFormFeedback(getTranslation("contact.form.feedback.submit_error"));
