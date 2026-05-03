@@ -165,19 +165,14 @@
 
                 <section id="contact" class="contact-section">
                     <div class="contact-wrapper">
-                        <div class="contact-intro">
+                        <div class="contact-column contact-column-info">
                             <p class="section-label" data-i18n="contact.label">Contact</p>
                             <h2 data-i18n="contact.heading">Let's build something meaningful.</h2>
-                            <p class="section-text" data-i18n="contact.intro">
-                                I'm open to new opportunities, collaborations, and projects that combine
-                                performance, usability, and thoughtful design.
+                            <p class="section-text contact-intro-text" data-i18n="contact.intro">
+                                I'm open to projects, collaborations, and new opportunities where I can contribute while continuing to grow in web development, systems thinking, and implementation.
                             </p>
-                        </div>
-
-                        <div class="contact-card">
                             <p class="contact-note" data-i18n="contact.note">
-                                Whether it's a web project, a gaming-inspired idea, or simply a good
-                                conversation about building better experiences - feel free to reach out.
+                                Whether it’s a web project, a game-inspired concept, or simply a good conversation about building better digital experiences, feel free to reach out.
                             </p>
 
                             <div class="contact-links">
@@ -196,6 +191,30 @@
                                     <strong data-i18n="contact.location.value">Germany &middot; Remote</strong>
                                 </div>
                             </div>
+                        </div>
+
+                        <div class="contact-card contact-form-card">
+                            <p class="section-label" data-i18n="contact.form.label">Send a Message</p>
+                            <h3 data-i18n="contact.form.heading">Project inquiry form</h3>
+                            <form class="contact-form" action="/api/contact" method="post" novalidate>
+                                <label class="contact-form-field">
+                                    <span data-i18n="contact.form.name.label">Name</span>
+                                    <input type="text" name="name" data-i18n-placeholder="contact.form.name.placeholder" placeholder="Your name" />
+                                </label>
+
+                                <label class="contact-form-field">
+                                    <span data-i18n="contact.form.email.label">Email</span>
+                                    <input type="email" name="email" data-i18n-placeholder="contact.form.email.placeholder" placeholder="your@email.com" />
+                                </label>
+
+                                <label class="contact-form-field">
+                                    <span data-i18n="contact.form.message.label">Message</span>
+                                    <textarea name="message" rows="6" data-i18n-placeholder="contact.form.message.placeholder" placeholder="Tell me a little about your project, idea, or request."></textarea>
+                                </label>
+
+                                <button type="submit" class="btn btn-primary contact-form-submit" data-i18n="contact.form.submit">Send Message</button>
+                                <p id="contactFormFeedback" class="contact-form-feedback" aria-live="polite"></p>
+                            </form>
                         </div>
                     </div>
                 </section>

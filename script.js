@@ -22,6 +22,11 @@ const getScrollBehavior = () => {
     return prefersReducedMotion.matches ? "auto" : "smooth";
 };
 
+function getTranslation(key) {
+    const lang = document.documentElement.lang || "de";
+    return translations?.[lang]?.[key] || key;
+}
+
 function syncBodyScrollLock() {
     const isImageModalOpen = modal?.classList.contains("show");
     const isPrototypeModalOpen = prototypeModal?.classList.contains("show");
@@ -246,6 +251,15 @@ function setLanguage(lang) {
         }
     });
 
+    document.querySelectorAll("[data-i18n-placeholder]").forEach((element) => {
+        const key = element.dataset.i18nPlaceholder;
+        const text = translations[lang][key];
+
+        if (typeof text === "string") {
+            element.placeholder = text;
+        }
+    });
+
     document.querySelectorAll("[data-i18n-aria-label]").forEach((element) => {
         const key = element.dataset.i18nAriaLabel;
         const text = translations[lang][key];
@@ -254,6 +268,10 @@ function setLanguage(lang) {
             element.setAttribute("aria-label", text);
         }
     });
+
+    if (submitButton?.disabled) {
+        setContactFormSubmitting(true);
+    }
 
     localStorage.setItem("language", lang);
 }
@@ -272,3 +290,115 @@ if (langEn) {
 
 const savedLanguage = localStorage.getItem("language") || "de";
 setLanguage(savedLanguage);
+
+
+//// Contact form
+
+const form = document.querySelector(".contact-form");
+const nameInput = document.querySelector('input[name="name"]');
+const emailInput = document.querySelector('input[name="email"]');
+const messageInput = document.querySelector('textarea[name="message"]');
+const feedback = document.querySelector("#contactFormFeedback");
+const submitButton = document.querySelector(".contact-form-submit");
+
+let feedbackTimeout;
+
+function showFormFeedback(message) {
+    if (!feedback) return;
+
+    clearTimeout(feedbackTimeout);
+
+    feedback.textContent = message;
+    feedback.classList.add("show");
+
+    feedbackTimeout = setTimeout(() => {
+        feedback.classList.remove("show");
+        feedback.textContent = "";
+    }, 10000);
+}
+
+function setContactFormSubmitting(isSubmitting) {
+    if (!submitButton) return;
+
+    submitButton.disabled = isSubmitting;
+    submitButton.textContent = getTranslation(
+        isSubmitting ? "contact.form.submit_sending" : "contact.form.submit"
+    );
+}
+
+function validateContactForm() {
+    const nameValue = nameInput.value.trim();
+    const emailValue = emailInput.value.trim();
+    const messageValue = messageInput.value.trim();
+
+    if (nameValue === "") {
+        showFormFeedback(getTranslation("contact.form.feedback.name_required"));
+        return false;
+    }
+
+    if (emailValue === "") {
+        showFormFeedback(getTranslation("contact.form.feedback.email_required"));
+        return false;
+    }
+
+    if (!emailValue.includes("@") || !emailValue.includes(".")) {
+        showFormFeedback(getTranslation("contact.form.feedback.email_invalid"));
+        return false;
+    }
+
+    if (messageValue === "") {
+        showFormFeedback(getTranslation("contact.form.feedback.message_required"));
+        return false;
+    }
+
+    return true;
+}
+
+async function handleContactFormSubmit(event) {
+    event.preventDefault();
+
+    if (!validateContactForm()) {
+        return;
+    }
+
+    const payload = {
+        name: nameInput.value.trim(),
+        email: emailInput.value.trim(),
+        message: messageInput.value.trim()
+    };
+
+    setContactFormSubmitting(true);
+
+    try {
+        const response = await fetch("/api/contact", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                "Accept": "application/json"
+            },
+            body: JSON.stringify(payload)
+        });
+
+        const data = await response.json().catch(() => ({}));
+
+        if (!response.ok) {
+            showFormFeedback(
+                getTranslation(data.errorKey || "contact.form.feedback.submit_error")
+            );
+            return;
+        }
+
+        form.reset();
+        showFormFeedback(
+            getTranslation(data.messageKey || "contact.form.feedback.submit_success")
+        );
+    } catch {
+        showFormFeedback(getTranslation("contact.form.feedback.submit_error"));
+    } finally {
+        setContactFormSubmitting(false);
+    }
+}
+
+if (form) {
+    form.addEventListener("submit", handleContactFormSubmit);
+}
