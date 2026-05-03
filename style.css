@@ -531,11 +531,16 @@ button {
     line-height: 1.7;
 }
 
+.hero-offer-intro {
+    margin-top: 36px;
+    margin-bottom: 0;
+}
+
 .hero-buttons {
     display: flex;
     flex-wrap: wrap;
     gap: 16px;
-    margin-top: 36px;
+    margin-top: 32px;
 }
 
 /* Stats */
@@ -546,7 +551,7 @@ button {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 16px;
-    margin-top: 44px;
+    margin-top: 18px;
 }
 
 .stat-card {
@@ -1313,6 +1318,10 @@ button {
     .stats {
         grid-template-columns: 1fr;
         max-width: 420px;
+    }
+
+    .hero-offer-intro {
+        margin-top: 32px;
     }
 
     .detail-card-flip {
