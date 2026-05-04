@@ -1,5 +1,37 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
+  "redirects": [
+    {
+      "source": "/index.html",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/portfolio.html",
+      "destination": "/portfolio/",
+      "permanent": true
+    },
+    {
+      "source": "/drakenveil.html",
+      "destination": "/drakenveil/",
+      "permanent": true
+    },
+    {
+      "source": "/drakentype.html",
+      "destination": "/drakentype/",
+      "permanent": true
+    },
+    {
+      "source": "/impressum.html",
+      "destination": "/impressum/",
+      "permanent": true
+    },
+    {
+      "source": "/datenschutz.html",
+      "destination": "/datenschutz/",
+      "permanent": true
+    }
+  ],
   "headers": [
     {
       "source": "/(.*)",
