@@ -4,3 +4,6 @@
 # OS / editor noise
 Thumbs.db
 Desktop.ini
+
+# Node.js dependencies
+node_modules/
