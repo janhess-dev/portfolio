@@ -1,4 +1,4 @@
-html, body { width: 100%; height: 100%; margin: 0; padding: 0; }
+html, body { width: 100%; height: 100%; margin: 0; padding: 0; overflow: hidden; }
 body {
   display: flex;
   align-items: center;
@@ -10,15 +10,12 @@ body {
   position: relative;
 }
 #unity-container.unity-desktop {
-  width: min(100vw, calc((100vh - 38px) * 16 / 9), 1920px);
   max-width: 100%;
+  max-height: 100%;
 }
 #unity-container.unity-mobile { position: fixed; width: 100%; height: 100% }
 #unity-canvas {
   display: block;
-  width: 100%;
-  height: auto;
-  aspect-ratio: 16 / 9;
   background: #231F20;
 }
 .unity-mobile #unity-canvas { width: 100%; height: 100% }
