@@ -6,8 +6,6 @@
     <title>Drakentype Preview</title>
     <style>
         :root {
-            --preview-width: 1920;
-            --preview-height: 1118;
             --preview-bg: #050514;
         }
 
@@ -42,8 +40,6 @@
             position: absolute;
             top: 0;
             left: 0;
-            width: calc(var(--preview-width) * 1px);
-            height: calc(var(--preview-height) * 1px);
             transform-origin: top left;
         }
 
@@ -64,30 +60,70 @@
                 id="previewFrame"
                 src="/webgl/Drakentype/index.html"
                 title="Drakentype Preview"
+                scrolling="no"
                 allowfullscreen
             ></iframe>
         </div>
     </div>
 
     <script>
-        const PREVIEW_WIDTH = 1920;
-        const PREVIEW_HEIGHT = 1118;
-
         const previewShell = document.getElementById("previewShell");
+        const previewFrame = document.getElementById("previewFrame");
+        let previewWidth = 1920;
+        let previewHeight = 1120;
+
+        function syncPreviewBounds() {
+            const frameWindow = previewFrame.contentWindow;
+            const frameDocument = previewFrame.contentDocument;
+
+            if (!frameWindow || !frameDocument) return;
+
+            frameDocument.documentElement.style.overflow = "hidden";
+            frameDocument.body.style.overflow = "hidden";
+
+            const doc = frameDocument.documentElement;
+            const body = frameDocument.body;
+
+            previewWidth = Math.max(
+                doc.scrollWidth,
+                doc.clientWidth,
+                body ? body.scrollWidth : 0,
+                body ? body.clientWidth : 0,
+                1920
+            );
+
+            previewHeight = Math.max(
+                doc.scrollHeight,
+                doc.clientHeight,
+                body ? body.scrollHeight : 0,
+                body ? body.clientHeight : 0,
+                1080
+            );
+
+            previewShell.style.width = `${previewWidth}px`;
+            previewShell.style.height = `${previewHeight}px`;
+            resizePreviewShell();
+        }
 
         function resizePreviewShell() {
             const availableWidth = window.innerWidth;
             const availableHeight = window.innerHeight;
             const scale = Math.min(
-                availableWidth / PREVIEW_WIDTH,
-                availableHeight / PREVIEW_HEIGHT
+                availableWidth / previewWidth,
+                availableHeight / previewHeight
             );
 
-            const offsetX = (availableWidth - PREVIEW_WIDTH * scale) / 2;
-            const offsetY = (availableHeight - PREVIEW_HEIGHT * scale) / 2;
+            const offsetX = (availableWidth - previewWidth * scale) / 2;
+            const offsetY = (availableHeight - previewHeight * scale) / 2;
 
             previewShell.style.transform = `translate(${offsetX}px, ${offsetY}px) scale(${scale})`;
         }
+
+        previewFrame.addEventListener("load", () => {
+            syncPreviewBounds();
+            requestAnimationFrame(syncPreviewBounds);
+            setTimeout(syncPreviewBounds, 150);
+        });
 
         window.addEventListener("resize", resizePreviewShell);
         resizePreviewShell();
