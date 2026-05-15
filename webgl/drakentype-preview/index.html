@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Drakentype Preview</title>
+    <style>
+        :root {
+            --preview-width: 1920;
+            --preview-height: 1118;
+            --preview-bg: #050514;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            overflow: hidden;
+            background: var(--preview-bg);
+        }
+
+        body {
+            display: grid;
+            place-items: center;
+            font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+        }
+
+        .preview-stage {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            background: var(--preview-bg);
+        }
+
+        .preview-shell {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: calc(var(--preview-width) * 1px);
+            height: calc(var(--preview-height) * 1px);
+            transform-origin: top left;
+        }
+
+        .preview-frame {
+            width: 100%;
+            height: 100%;
+            border: 0;
+            display: block;
+            background: var(--preview-bg);
+        }
+    </style>
+</head>
+<body>
+    <div class="preview-stage">
+        <div class="preview-shell" id="previewShell">
+            <iframe
+                class="preview-frame"
+                id="previewFrame"
+                src="/webgl/Drakentype/index.html"
+                title="Drakentype Preview"
+                allowfullscreen
+            ></iframe>
+        </div>
+    </div>
+
+    <script>
+        const PREVIEW_WIDTH = 1920;
+        const PREVIEW_HEIGHT = 1118;
+
+        const previewShell = document.getElementById("previewShell");
+
+        function resizePreviewShell() {
+            const availableWidth = window.innerWidth;
+            const availableHeight = window.innerHeight;
+            const scale = Math.min(
+                availableWidth / PREVIEW_WIDTH,
+                availableHeight / PREVIEW_HEIGHT
+            );
+
+            const offsetX = (availableWidth - PREVIEW_WIDTH * scale) / 2;
+            const offsetY = (availableHeight - PREVIEW_HEIGHT * scale) / 2;
+
+            previewShell.style.transform = `translate(${offsetX}px, ${offsetY}px) scale(${scale})`;
+        }
+
+        window.addEventListener("resize", resizePreviewShell);
+        resizePreviewShell();
+    </script>
+</body>
+</html>
