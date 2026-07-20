@@ -158,6 +158,19 @@ button {
         background-position: right center;
     }
 
+.btn-secondary {
+    color: rgba(255, 255, 255, 0.96);
+    border: 1px solid rgba(150, 162, 255, 0.32);
+    background: rgba(255, 255, 255, 0.06);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.18);
+}
+
+    .btn-secondary:hover {
+        border-color: rgba(150, 162, 255, 0.5);
+        background: rgba(255, 255, 255, 0.1);
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.24);
+    }
+
 /* Labels */
 
 .section-label,
@@ -1327,6 +1340,18 @@ button {
     flex-wrap: wrap;
     gap: 14px;
     margin-top: 28px;
+}
+
+.project-download-note {
+    margin-top: 14px;
+    max-width: 540px;
+    color: rgba(255, 255, 255, 0.72);
+    font-size: 0.95rem;
+    line-height: 1.7;
+}
+
+.project-download-note strong {
+    color: rgba(255, 255, 255, 0.96);
 }
 
 .project-hero-media {

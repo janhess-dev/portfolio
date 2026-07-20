@@ -89,13 +89,28 @@ if (modal && modalImg) {
         syncBodyScrollLock();
     };
 
+    const openImageModal = (src, alt = "") => {
+        modal.classList.add("show");
+        modal.setAttribute("aria-hidden", "false");
+        modalImg.src = src;
+        modalImg.alt = alt;
+        syncBodyScrollLock();
+    };
+
     document.querySelectorAll(".zoomable-image").forEach((img) => {
         img.addEventListener("click", () => {
-            modal.classList.add("show");
-            modal.setAttribute("aria-hidden", "false");
-            modalImg.src = img.dataset.full || img.src;
-            modalImg.alt = img.alt || "";
-            syncBodyScrollLock();
+            openImageModal(img.dataset.full || img.src, img.alt || "");
+        });
+    });
+
+    document.querySelectorAll("[data-preview-image-selector]").forEach((launcher) => {
+        launcher.addEventListener("click", () => {
+            const selector = launcher.getAttribute("data-preview-image-selector");
+            const targetImage = selector ? document.querySelector(selector) : null;
+
+            if (!targetImage) return;
+
+            openImageModal(targetImage.dataset.full || targetImage.src, targetImage.alt || "");
         });
     });
 
