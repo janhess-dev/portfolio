@@ -697,6 +697,20 @@ button {
         transition: all 0.25s ease;
     }
 
+    .project-links .project-link-disabled {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 10px 14px;
+        border-radius: var(--radius-sm);
+        border: 1px solid var(--glass-border);
+        color: rgba(255, 255, 255, 0.72);
+        font-weight: 600;
+        font-size: 0.92rem;
+        background: rgba(255, 255, 255, 0.06);
+        cursor: default;
+    }
+
 .project-inks a:focus-visible {
     outline: none;
     border-color: rgba(141, 183, 255, 0.55);
