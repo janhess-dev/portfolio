@@ -32,6 +32,12 @@
       "permanent": true
     }
   ],
+  "rewrites": [
+    {
+      "source": "/medicounter/Datenschutz",
+      "destination": "/medicounter/privacy-policy.html"
+    }
+  ],
   "headers": [
     {
       "source": "/(.*)",

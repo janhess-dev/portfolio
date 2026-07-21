@@ -1354,6 +1354,66 @@ button {
     color: rgba(255, 255, 255, 0.96);
 }
 
+.product-spec-list {
+    margin: 0;
+    display: grid;
+    gap: 12px;
+}
+
+.product-spec-item {
+    padding: 14px 16px;
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    background: rgba(255, 255, 255, 0.03);
+}
+
+.product-spec-item dt {
+    margin-bottom: 6px;
+    color: rgba(255, 255, 255, 0.58);
+    font-size: 0.82rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.product-spec-item dd {
+    margin: 0;
+    color: rgba(255, 255, 255, 0.96);
+    font-size: 1rem;
+    line-height: 1.55;
+}
+
+.product-hash {
+    word-break: break-all;
+    font-family: "Cascadia Code", "Consolas", monospace;
+    font-size: 0.9rem;
+}
+
+.product-note-list {
+    margin-top: 18px;
+}
+
+.detail-card-link {
+    display: inline-flex;
+    align-items: center;
+    margin-top: 20px;
+    color: var(--color-blue-soft);
+    font-weight: 700;
+    text-decoration: none;
+    transition: color 0.2s ease, transform 0.2s ease;
+}
+
+    .detail-card-link:hover {
+        color: var(--color-text);
+        transform: translateX(2px);
+    }
+
+    .detail-card-link:focus-visible {
+        outline: 2px solid rgba(141, 183, 255, 0.55);
+        outline-offset: 4px;
+        border-radius: 10px;
+    }
+
 .project-hero-media {
     position: relative;
     overflow: hidden;
