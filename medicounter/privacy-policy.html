@@ -8,6 +8,19 @@
     :root { color-scheme: light dark; font-family: "Segoe UI", system-ui, sans-serif; }
     body { margin: 0; background: Canvas; color: CanvasText; line-height: 1.6; }
     main { width: min(760px, calc(100% - 40px)); margin: 48px auto; }
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 20px;
+      padding: 10px 14px;
+      border-radius: 999px;
+      border: 1px solid color-mix(in srgb, #168f87 24%, CanvasText 14%);
+      background: color-mix(in srgb, #168f87 10%, Canvas);
+      color: CanvasText;
+      text-decoration: none;
+      font-weight: 600;
+    }
     h1 { font-size: 2rem; margin-bottom: 0.25rem; }
     h2 { margin-top: 2rem; font-size: 1.2rem; }
     .meta { color: GrayText; }
@@ -17,6 +30,7 @@
 </head>
 <body>
   <main>
+    <a href="/medicounter/" class="back-link">&larr; Zur&uuml;ck zu MediCounter</a>
     <h1>Datenschutzerkl&auml;rung f&uuml;r MediCounter</h1>
     <p class="meta">Stand: 21. Juli 2026</p>
 
