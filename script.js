@@ -6,6 +6,7 @@ const contact = byId("contact");
 const btn = byId("backToTop");
 const modal = byId("imageModal");
 const modalImg = byId("modalImg");
+const modalGallery = byId("imageModalGallery");
 const closeImageModalBtn = byId("closeImageModal");
 const prototypeModal = byId("prototypeModal");
 const prototypeFrame = byId("prototypeFrame");
@@ -82,10 +83,24 @@ if (btn) {
 }
 
 if (modal && modalImg) {
+    let imageGalleryItems = [];
+    let currentGalleryIndex = -1;
+
+    const clearImageGallery = () => {
+        imageGalleryItems = [];
+        currentGalleryIndex = -1;
+
+        if (modalGallery) {
+            modalGallery.innerHTML = "";
+            modalGallery.hidden = true;
+        }
+    };
+
     const closeModal = () => {
         modal.classList.remove("show");
         modal.setAttribute("aria-hidden", "true");
         modalImg.src = "";
+        clearImageGallery();
         syncBodyScrollLock();
     };
 
@@ -97,8 +112,51 @@ if (modal && modalImg) {
         syncBodyScrollLock();
     };
 
+    const renderImageGallery = () => {
+        if (!modalGallery || imageGalleryItems.length === 0) return;
+
+        modalGallery.innerHTML = "";
+        modalGallery.hidden = false;
+
+        imageGalleryItems.forEach((item, index) => {
+            const thumbButton = document.createElement("button");
+            thumbButton.type = "button";
+            thumbButton.className = "image-modal-thumb";
+            thumbButton.setAttribute("aria-label", item.alt || `Preview ${index + 1}`);
+
+            if (index === currentGalleryIndex) {
+                thumbButton.classList.add("is-active");
+            }
+
+            const thumbImage = document.createElement("img");
+            thumbImage.src = item.src;
+            thumbImage.alt = item.alt || "";
+
+            thumbButton.appendChild(thumbImage);
+            thumbButton.addEventListener("click", () => {
+                currentGalleryIndex = index;
+                openImageModal(item.src, item.alt || "");
+                renderImageGallery();
+            });
+
+            modalGallery.appendChild(thumbButton);
+        });
+    };
+
+    const openImageGallery = (items, startIndex = 0) => {
+        if (!Array.isArray(items) || items.length === 0) return;
+
+        imageGalleryItems = items;
+        currentGalleryIndex = Math.max(0, Math.min(startIndex, items.length - 1));
+
+        const activeItem = imageGalleryItems[currentGalleryIndex];
+        openImageModal(activeItem.src, activeItem.alt || "");
+        renderImageGallery();
+    };
+
     document.querySelectorAll(".zoomable-image").forEach((img) => {
         img.addEventListener("click", () => {
+            clearImageGallery();
             openImageModal(img.dataset.full || img.src, img.alt || "");
         });
     });
@@ -110,7 +168,27 @@ if (modal && modalImg) {
 
             if (!targetImage) return;
 
+            clearImageGallery();
             openImageModal(targetImage.dataset.full || targetImage.src, targetImage.alt || "");
+        });
+    });
+
+    document.querySelectorAll("[data-preview-gallery]").forEach((launcher) => {
+        launcher.addEventListener("click", () => {
+            const sources = (launcher.getAttribute("data-preview-gallery") || "")
+                .split(",")
+                .map((value) => value.trim())
+                .filter(Boolean);
+
+            if (sources.length === 0) return;
+
+            const altPrefix = launcher.getAttribute("data-preview-gallery-alt-prefix") || "Preview";
+            const galleryItems = sources.map((src, index) => ({
+                src,
+                alt: `${altPrefix} ${index + 1}`
+            }));
+
+            openImageGallery(galleryItems, 0);
         });
     });
 
@@ -178,6 +256,10 @@ document.addEventListener("keydown", (e) => {
         modal.setAttribute("aria-hidden", "true");
         if (modalImg) {
             modalImg.src = "";
+        }
+        if (modalGallery) {
+            modalGallery.innerHTML = "";
+            modalGallery.hidden = true;
         }
         syncBodyScrollLock();
     }

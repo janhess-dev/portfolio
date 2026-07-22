@@ -1099,6 +1099,41 @@ button {
     background: #050514;
 }
 
+.image-modal-gallery {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 12px;
+    padding: 0 24px 24px;
+    background: #050514;
+}
+
+.image-modal-thumb {
+    padding: 0;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 14px;
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.04);
+    cursor: pointer;
+    transition: border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+    .image-modal-thumb:hover {
+        transform: translateY(-2px);
+        border-color: rgba(141, 183, 255, 0.45);
+    }
+
+    .image-modal-thumb.is-active {
+        border-color: rgba(141, 183, 255, 0.75);
+        box-shadow: 0 0 0 2px rgba(141, 183, 255, 0.16);
+    }
+
+    .image-modal-thumb img {
+        width: 100%;
+        display: block;
+        aspect-ratio: 1 / 1;
+        object-fit: cover;
+    }
+
 #modalImg {
     display: block;
     width: auto;
@@ -1624,6 +1659,10 @@ button {
     .project-screenshot-grid {
         grid-template-columns: repeat(3, minmax(0, 1fr));
     }
+
+    .image-modal-gallery {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
 }
 
 /* Mobile hero */
@@ -1665,6 +1704,10 @@ button {
     }
 
     .project-screenshot-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .image-modal-gallery {
         grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 

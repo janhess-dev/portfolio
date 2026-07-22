@@ -33,16 +33,20 @@
                         </p>
 
                         <div class="project-stack project-stack-detail">
-                            <span data-i18n="medicounterPage.hero.stack_windows">Windows x64</span>
+                            <span data-i18n="medicounterPage.hero.stack_csharp">C#</span>
+                            <span data-i18n="medicounterPage.hero.stack_xaml">XAML</span>
                             <span data-i18n="medicounterPage.hero.stack_winui">WinUI 3</span>
-                            <span data-i18n="medicounterPage.hero.stack_local">Local Data</span>
-                            <span data-i18n="medicounterPage.hero.stack_cloud">No Cloud Account</span>
-                            <span data-i18n="medicounterPage.hero.stack_beta">Beta v0.6.203.70</span>
+                            <span data-i18n="medicounterPage.hero.stack_dotnet">.NET 8</span>
                         </div>
 
                         <div class="project-detail-actions">
                             <a href="/MediCounter.zip" class="btn btn-primary" download data-i18n="medicounterPage.hero.link_download">Download ZIP</a>
-                            <button type="button" class="btn btn-secondary" data-preview-image-selector="#medicounterPreviewImage" data-i18n="medicounterPage.hero.link_preview">Open Preview</button>
+                            <button
+                                type="button"
+                                class="btn btn-secondary"
+                                data-preview-gallery="/JPGs/Medicounter_0.png,/JPGs/Medicounter_1.png,/JPGs/Medicounter_2.png,/JPGs/Medicounter_3.png,/JPGs/Medicounter_4.png"
+                                data-preview-gallery-alt-prefix="MediCounter screenshot"
+                                data-i18n="medicounterPage.hero.link_preview">Open Preview</button>
                             <a href="/medicounter/Datenschutz" class="btn btn-secondary" data-i18n="medicounterPage.hero.link_privacy">Privacy Policy</a>
                         </div>
                         <p class="project-download-note" data-i18n="medicounterPage.hero.download_note">
@@ -52,13 +56,6 @@
 
                     <div class="project-hero-media">
                         <img id="medicounterPreviewImage" class="project-hero-preview-image zoomable-image" src="/JPGs/Medicounter.png" alt="Screenshot of MediCounter" data-i18n-alt="medicounterPage.hero.image_alt" />
-                        <div class="project-screenshot-grid">
-                            <img class="project-screenshot-thumb zoomable-image" src="/JPGs/Medicounter_0.png" alt="MediCounter screenshot 1" />
-                            <img class="project-screenshot-thumb zoomable-image" src="/JPGs/Medicounter_1.png" alt="MediCounter screenshot 2" />
-                            <img class="project-screenshot-thumb zoomable-image" src="/JPGs/Medicounter_2.png" alt="MediCounter screenshot 3" />
-                            <img class="project-screenshot-thumb zoomable-image" src="/JPGs/Medicounter_3.png" alt="MediCounter screenshot 4" />
-                            <img class="project-screenshot-thumb zoomable-image" src="/JPGs/Medicounter_4.png" alt="MediCounter screenshot 5" />
-                        </div>
                     </div>
                 </section>
 
@@ -193,6 +190,7 @@
             <div class="image-modal-frame">
                 <img id="modalImg" src="" alt="Preview" data-i18n-alt="common.preview_alt">
             </div>
+            <div id="imageModalGallery" class="image-modal-gallery" hidden></div>
         </div>
     </div>
 
