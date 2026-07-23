@@ -1,178 +1,201 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Datenschutzerkl&auml;rung - MediCounter</title>
-  <style>
-    :root { color-scheme: light dark; font-family: "Segoe UI", system-ui, sans-serif; }
-    body { margin: 0; background: Canvas; color: CanvasText; line-height: 1.65; }
-    main { width: min(820px, calc(100% - 40px)); margin: 48px auto; }
-    .back-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      margin-bottom: 20px;
-      padding: 10px 14px;
-      border-radius: 999px;
-      border: 1px solid color-mix(in srgb, #168f87 24%, CanvasText 14%);
-      background: color-mix(in srgb, #168f87 10%, Canvas);
-      color: CanvasText;
-      text-decoration: none;
-      font-weight: 600;
-    }
-    h1 { font-size: 2rem; margin-bottom: 0.25rem; }
-    h2 { margin-top: 2rem; font-size: 1.2rem; }
-    .meta { color: GrayText; }
-    .notice {
-      border-left: 4px solid #168f87;
-      padding: 12px 16px;
-      background: color-mix(in srgb, #168f87 9%, Canvas);
-    }
-    .subtle {
-      color: GrayText;
-      font-size: 0.98rem;
-    }
-    ul { padding-left: 1.2rem; }
-    a { color: #087f77; }
-  </style>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title data-i18n="medicounterPrivacyPage.meta.title">Datenschutzerkl&auml;rung | MediCounter</title>
+    <link rel="stylesheet" href="/style.css" />
 </head>
-<body>
-  <main>
-    <a href="/medicounter/" class="back-link">&larr; Zur&uuml;ck zu MediCounter</a>
+<body class="project-page legal-page">
+    <header class="site-header">
+        <nav class="topbar">
+            <div class="lang-switch" aria-label="Language switcher" data-i18n-aria-label="topbar.language_switcher">
+                <button type="button" id="langDe" class="lang-btn">DE</button>
+                <button type="button" id="langEn" class="lang-btn">EN</button>
+            </div>
+        </nav>
+    </header>
 
-    <h1>Datenschutzerkl&auml;rung f&uuml;r MediCounter</h1>
-    <p class="meta">Stand: 23. Juli 2026</p>
+    <div class="page-flow">
+        <main class="project-detail page-enter">
+            <div class="project-detail-container legal-container">
+                <a href="/medicounter/" class="back-link" data-i18n="medicounterPrivacyPage.back_link">&larr; Zur&uuml;ck zu MediCounter</a>
 
-    <p class="notice">
-      MediCounter dient ausschlie&szlig;lich der Organisation vorhandener Medikamentenbest&auml;nde.
-      Die App bietet keine medizinischen Empfehlungen und ersetzt keine &auml;rztliche oder pharmazeutische Beratung.
-    </p>
+                <section class="project-section legal-hero">
+                    <p class="section-label" data-i18n="legal.label">Rechtliches</p>
+                    <h1 data-i18n="medicounterPrivacyPage.title">Datenschutzerkl&auml;rung f&uuml;r MediCounter</h1>
+                    <p class="section-text legal-lead" data-i18n="medicounterPrivacyPage.lead">
+                        Diese Datenschutzerkl&auml;rung beschreibt, welche personenbezogenen Daten in der Windows-App MediCounter verarbeitet werden, zu welchem Zweck dies geschieht und welche Grenzen die App dabei bewusst einh&auml;lt.
+                    </p>
+                    <p class="legal-updated" data-i18n="legal.updated">Stand: 23. Juli 2026</p>
+                </section>
 
-    <h2>1. Verantwortlicher</h2>
-    <p>
-      JH Solution<br>
-      vertreten durch Jan He&szlig;<br>
-      Am Kirchberg 6<br>
-      53947 Nettersheim<br>
-      Deutschland<br>
-      E-Mail: <a href="mailto:NachrichtJH@gmail.com">NachrichtJH@gmail.com</a>
-    </p>
+                <section class="legal-section">
+                    <p class="legal-note" data-i18n="medicounterPrivacyPage.notice">
+                        MediCounter dient ausschlie&szlig;lich der Organisation vorhandener Medikamentenbest&auml;nde. Die App bietet keine medizinischen Empfehlungen und ersetzt keine &auml;rztliche oder pharmazeutische Beratung.
+                    </p>
+                </section>
 
-    <h2>2. Wof&uuml;r diese Datenschutzerkl&auml;rung gilt</h2>
-    <p>
-      Diese Datenschutzerkl&auml;rung beschreibt die Datenverarbeitung innerhalb der Windows-App MediCounter.
-      Sie betrifft die Nutzung der App selbst.
-    </p>
-    <p class="subtle">
-      Hinweis: Diese Datenschutzerkl&auml;rung wird auf einer Website ver&ouml;ffentlicht.
-      F&uuml;r den Besuch dieser Website gilt zus&auml;tzlich die separate Datenschutzerkl&auml;rung der Website.
-      Angaben zum Hosting dieser Ver&ouml;ffentlichungsseite, zum Beispiel &uuml;ber Vercel, geh&ouml;ren in die Datenschutzerkl&auml;rung der Website und nicht in diese appbezogene Datenschutzerkl&auml;rung.
-    </p>
+                <section class="legal-section">
+                    <h2 data-i18n="medicounterPrivacyPage.controller.heading">1. Verantwortlicher</h2>
+                    <div class="legal-address" data-i18n-html="medicounterPrivacyPage.controller.address">
+                        <strong>JH Solution</strong><br />
+                        vertreten durch Jan He&szlig;<br />
+                        Am Kirchberg 6<br />
+                        53947 Nettersheim<br />
+                        Deutschland<br />
+                        E-Mail: <a href="mailto:NachrichtJH@gmail.com">NachrichtJH@gmail.com</a>
+                    </div>
+                </section>
 
-    <h2>3. Welche Daten MediCounter verarbeitet</h2>
-    <p>MediCounter verarbeitet nur die Daten, die f&uuml;r die Nutzung der App-Funktionen erforderlich sind. Dazu k&ouml;nnen insbesondere geh&ouml;ren:</p>
-    <ul>
-      <li>angelegte Personenprofile,</li>
-      <li>eingetragene Medikamenten- und Bestandsinformationen,</li>
-      <li>lokale App-Einstellungen,</li>
-      <li>technische Diagnosedaten im Rahmen eines lokalen Fehlerprotokolls.</li>
-    </ul>
+                <section class="legal-section">
+                    <h2 data-i18n="medicounterPrivacyPage.scope.heading">2. Wof&uuml;r diese Datenschutzerkl&auml;rung gilt</h2>
+                    <p data-i18n="medicounterPrivacyPage.scope.text">
+                        Diese Datenschutzerkl&auml;rung beschreibt die Datenverarbeitung innerhalb der Windows-App MediCounter. Sie betrifft die Nutzung der App selbst.
+                    </p>
+                    <p class="legal-note" data-i18n="medicounterPrivacyPage.scope.note">
+                        Diese Datenschutzerkl&auml;rung wird auf einer Website ver&ouml;ffentlicht. F&uuml;r den Besuch dieser Website gilt zus&auml;tzlich die separate Datenschutzerkl&auml;rung der Website. Angaben zum Hosting dieser Ver&ouml;ffentlichungsseite, zum Beispiel &uuml;ber Vercel, geh&ouml;ren in die Datenschutzerkl&auml;rung der Website und nicht in diese appbezogene Datenschutzerkl&auml;rung.
+                    </p>
+                </section>
 
-    <h2>4. Zweck der Verarbeitung</h2>
-    <p>Die Verarbeitung erfolgt, um die Funktionen von MediCounter bereitzustellen, insbesondere:</p>
-    <ul>
-      <li>zur Verwaltung von Medikamentenbest&auml;nden pro Person,</li>
-      <li>zum Speichern und Anzeigen der vom Nutzer eingegebenen Daten,</li>
-      <li>zur technischen Stabilit&auml;t und Fehleranalyse der App.</li>
-    </ul>
+                <section class="legal-section">
+                    <h2 data-i18n="medicounterPrivacyPage.data.heading">3. Welche Daten MediCounter verarbeitet</h2>
+                    <p data-i18n="medicounterPrivacyPage.data.text">
+                        MediCounter verarbeitet nur die Daten, die f&uuml;r die Nutzung der App-Funktionen erforderlich sind. Dazu k&ouml;nnen insbesondere geh&ouml;ren:
+                    </p>
+                    <ul class="legal-list">
+                        <li data-i18n="medicounterPrivacyPage.data.item_1">angelegte Personenprofile</li>
+                        <li data-i18n="medicounterPrivacyPage.data.item_2">eingetragene Medikamenten- und Bestandsinformationen</li>
+                        <li data-i18n="medicounterPrivacyPage.data.item_3">lokale App-Einstellungen</li>
+                        <li data-i18n="medicounterPrivacyPage.data.item_4">technische Diagnosedaten im Rahmen eines lokalen Fehlerprotokolls</li>
+                    </ul>
+                </section>
 
-    <h2>5. Rechtsgrundlagen</h2>
-    <p>
-      Soweit MediCounter personenbezogene Daten zur Bereitstellung der vom Nutzer gew&uuml;nschten App-Funktionen verarbeitet,
-      erfolgt dies auf Grundlage von Art. 6 Abs. 1 lit. b DSGVO.
-      Soweit technische Diagnosedaten zur Sicherstellung von Stabilit&auml;t, Fehleranalyse oder Missbrauchsvermeidung verarbeitet werden,
-      erfolgt dies auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO.
-    </p>
+                <section class="legal-section">
+                    <h2 data-i18n="medicounterPrivacyPage.purpose.heading">4. Zweck der Verarbeitung</h2>
+                    <p data-i18n="medicounterPrivacyPage.purpose.text">
+                        Die Verarbeitung erfolgt, um die Funktionen von MediCounter bereitzustellen, insbesondere:
+                    </p>
+                    <ul class="legal-list">
+                        <li data-i18n="medicounterPrivacyPage.purpose.item_1">zur Verwaltung von Medikamentenbest&auml;nden pro Person</li>
+                        <li data-i18n="medicounterPrivacyPage.purpose.item_2">zum Speichern und Anzeigen der vom Nutzer eingegebenen Daten</li>
+                        <li data-i18n="medicounterPrivacyPage.purpose.item_3">zur technischen Stabilit&auml;t und Fehleranalyse der App</li>
+                    </ul>
+                </section>
 
-    <h2>6. Lokale Datenspeicherung</h2>
-    <p>
-      MediCounter speichert App-Daten ausschlie&szlig;lich lokal auf dem verwendeten Windows-Ger&auml;t beziehungsweise
-      im zugeh&ouml;rigen Benutzerkonto. Es erfolgt keine automatische Cloud-Synchronisierung.
-    </p>
-    <p>
-      MediCounter verwendet kein Benutzerkonto und &uuml;bertr&auml;gt Bestands- oder Personendaten nicht automatisch an den Entwickler oder an Dritte.
-    </p>
+                <section class="legal-section">
+                    <h2 data-i18n="medicounterPrivacyPage.legal.heading">5. Rechtsgrundlagen</h2>
+                    <p data-i18n="medicounterPrivacyPage.legal.text">
+                        Soweit MediCounter personenbezogene Daten zur Bereitstellung der vom Nutzer gew&uuml;nschten App-Funktionen verarbeitet, erfolgt dies auf Grundlage von Art. 6 Abs. 1 lit. b DSGVO. Soweit technische Diagnosedaten zur Sicherstellung von Stabilit&auml;t, Fehleranalyse oder Missbrauchsvermeidung verarbeitet werden, erfolgt dies auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO.
+                    </p>
+                </section>
 
-    <h2>7. Empf&auml;nger und Weitergabe</h2>
-    <p>
-      Eine automatische Weitergabe von App-Daten an externe Empf&auml;nger findet nicht statt.
-      Daten verlassen die App nur, wenn Nutzer dies selbst aktiv ausl&ouml;sen, etwa durch:
-    </p>
-    <ul>
-      <li>das Erstellen eines Backups oder Exports,</li>
-      <li>das manuelle Versenden einer Feedback-E-Mail,</li>
-      <li>das &Ouml;ffnen externer Seiten wie PayPal im Browser.</li>
-    </ul>
+                <section class="legal-section">
+                    <h2 data-i18n="medicounterPrivacyPage.local.heading">6. Lokale Datenspeicherung</h2>
+                    <p data-i18n="medicounterPrivacyPage.local.text_1">
+                        MediCounter speichert App-Daten ausschlie&szlig;lich lokal auf dem verwendeten Windows-Ger&auml;t beziehungsweise im zugeh&ouml;rigen Benutzerkonto. Es erfolgt keine automatische Cloud-Synchronisierung.
+                    </p>
+                    <p data-i18n="medicounterPrivacyPage.local.text_2">
+                        MediCounter verwendet kein Benutzerkonto und &uuml;bertr&auml;gt Bestands- oder Personendaten nicht automatisch an den Entwickler oder an Dritte.
+                    </p>
+                </section>
 
-    <h2>8. Feedback per E-Mail</h2>
-    <p>
-      Die Feedbackfunktion &ouml;ffnet das auf dem Ger&auml;t eingerichtete E-Mail-Programm und bereitet eine Nachricht an den Entwickler vor.
-      Automatisch eingef&uuml;gt werden ausschlie&szlig;lich technische Angaben wie die MediCounter-Version und die vom Betriebssystem gemeldete Windows-Version.
-    </p>
-    <p>
-      Personen- oder Bestandsdaten werden dabei nicht automatisch eingef&uuml;gt.
-      Eine &Uuml;bermittlung erfolgt erst, wenn der Nutzer die E-Mail selbst absendet.
-      Ab diesem Zeitpunkt erfolgt die Verarbeitung &uuml;ber den jeweils genutzten E-Mail-Anbieter.
-    </p>
+                <section class="legal-section">
+                    <h2 data-i18n="medicounterPrivacyPage.sharing.heading">7. Empf&auml;nger und Weitergabe</h2>
+                    <p data-i18n="medicounterPrivacyPage.sharing.text">
+                        Eine automatische Weitergabe von App-Daten an externe Empf&auml;nger findet nicht statt. Daten verlassen die App nur, wenn Nutzer dies selbst aktiv ausl&ouml;sen, etwa durch:
+                    </p>
+                    <ul class="legal-list">
+                        <li data-i18n="medicounterPrivacyPage.sharing.item_1">das Erstellen eines Backups oder Exports</li>
+                        <li data-i18n="medicounterPrivacyPage.sharing.item_2">das manuelle Versenden einer Feedback-E-Mail</li>
+                        <li data-i18n="medicounterPrivacyPage.sharing.item_3">das &Ouml;ffnen externer Seiten wie PayPal im Browser</li>
+                    </ul>
+                </section>
 
-    <h2>9. Lokales Diagnoseprotokoll</h2>
-    <p>
-      MediCounter kann ein lokales, gr&ouml;&szlig;enbegrenztes Diagnoseprotokoll f&uuml;hren, um technische Fehler nachvollziehbar zu machen.
-      Dieses Protokoll kann insbesondere Zeitpunkte, App-Versionen und technische Fehlerkennungen enthalten.
-    </p>
-    <p>
-      Nach aktuellem Stand sollen darin keine Namen, Medikamentendaten, Dateiinhalte oder frei eingegebenen Texte protokolliert werden.
-      Das Protokoll wird nicht automatisch an den Entwickler &uuml;bermittelt.
-    </p>
+                <section class="legal-section">
+                    <h2 data-i18n="medicounterPrivacyPage.feedback.heading">8. Feedback per E-Mail</h2>
+                    <p data-i18n="medicounterPrivacyPage.feedback.text_1">
+                        Die Feedbackfunktion &ouml;ffnet das auf dem Ger&auml;t eingerichtete E-Mail-Programm und bereitet eine Nachricht an den Entwickler vor. Automatisch eingef&uuml;gt werden ausschlie&szlig;lich technische Angaben wie die MediCounter-Version und die vom Betriebssystem gemeldete Windows-Version.
+                    </p>
+                    <p data-i18n="medicounterPrivacyPage.feedback.text_2">
+                        Personen- oder Bestandsdaten werden dabei nicht automatisch eingef&uuml;gt. Eine &Uuml;bermittlung erfolgt erst, wenn der Nutzer die E-Mail selbst absendet. Ab diesem Zeitpunkt erfolgt die Verarbeitung &uuml;ber den jeweils genutzten E-Mail-Anbieter.
+                    </p>
+                </section>
 
-    <h2>10. Backups und Exporte</h2>
-    <p>
-      Wenn Nutzer Backups oder Exporte erstellen, k&ouml;nnen diese Dateien personenbezogene oder gesundheitsbezogene Inhalte enthalten.
-      F&uuml;r die sichere Aufbewahrung, Weitergabe und L&ouml;schung solcher Dateien ist der Nutzer selbst verantwortlich.
-    </p>
+                <section class="legal-section">
+                    <h2 data-i18n="medicounterPrivacyPage.logs.heading">9. Lokales Diagnoseprotokoll</h2>
+                    <p data-i18n="medicounterPrivacyPage.logs.text_1">
+                        MediCounter kann ein lokales, gr&ouml;&szlig;enbegrenztes Diagnoseprotokoll f&uuml;hren, um technische Fehler nachvollziehbar zu machen. Dieses Protokoll kann insbesondere Zeitpunkte, App-Versionen und technische Fehlerkennungen enthalten.
+                    </p>
+                    <p data-i18n="medicounterPrivacyPage.logs.text_2">
+                        Nach aktuellem Stand sollen darin keine Namen, Medikamentendaten, Dateiinhalte oder frei eingegebenen Texte protokolliert werden. Das Protokoll wird nicht automatisch an den Entwickler &uuml;bermittelt.
+                    </p>
+                </section>
 
-    <h2>11. Externe Dienste</h2>
-    <p>
-      Soweit MediCounter externe Seiten oder Dienste &ouml;ffnet, etwa eine PayPal-Seite zur freiwilligen Unterst&uuml;tzung,
-      gelten ab diesem Zeitpunkt die Datenschutzbestimmungen des jeweiligen Drittanbieters.
-    </p>
+                <section class="legal-section">
+                    <h2 data-i18n="medicounterPrivacyPage.backups.heading">10. Backups und Exporte</h2>
+                    <p data-i18n="medicounterPrivacyPage.backups.text">
+                        Wenn Nutzer Backups oder Exporte erstellen, k&ouml;nnen diese Dateien personenbezogene oder gesundheitsbezogene Inhalte enthalten. F&uuml;r die sichere Aufbewahrung, Weitergabe und L&ouml;schung solcher Dateien ist der Nutzer selbst verantwortlich.
+                    </p>
+                </section>
 
-    <h2>12. Speicherdauer und L&ouml;schung</h2>
-    <p>
-      Die in MediCounter gespeicherten Daten bleiben grunds&auml;tzlich so lange lokal gespeichert,
-      bis sie vom Nutzer innerhalb der App oder durch Entfernen der lokalen Anwendungsdaten gel&ouml;scht werden.
-    </p>
-    <p>
-      Bei einer Deinstallation kann es sein, dass lokale App-Daten je nach Windows-Konfiguration nicht automatisch entfernt werden.
-      Diese k&ouml;nnen dann zus&auml;tzlich manuell &uuml;ber Windows oder den lokalen App-Datenordner gel&ouml;scht werden.
-    </p>
+                <section class="legal-section">
+                    <h2 data-i18n="medicounterPrivacyPage.external.heading">11. Externe Dienste</h2>
+                    <p data-i18n="medicounterPrivacyPage.external.text">
+                        Soweit MediCounter externe Seiten oder Dienste &ouml;ffnet, etwa eine PayPal-Seite zur freiwilligen Unterst&uuml;tzung, gelten ab diesem Zeitpunkt die Datenschutzbestimmungen des jeweiligen Drittanbieters.
+                    </p>
+                </section>
 
-    <h2>13. Rechte betroffener Personen</h2>
-    <p>Sofern personenbezogene Daten verarbeitet werden, bestehen nach der DSGVO insbesondere folgende Rechte:</p>
-    <ul>
-      <li>Recht auf Auskunft,</li>
-      <li>Recht auf Berichtigung,</li>
-      <li>Recht auf L&ouml;schung,</li>
-      <li>Recht auf Einschr&auml;nkung der Verarbeitung,</li>
-      <li>Recht auf Widerspruch,</li>
-      <li>Recht auf Beschwerde bei einer zust&auml;ndigen Datenschutzaufsichtsbeh&ouml;rde.</li>
-    </ul>
+                <section class="legal-section">
+                    <h2 data-i18n="medicounterPrivacyPage.retention.heading">12. Speicherdauer und L&ouml;schung</h2>
+                    <p data-i18n="medicounterPrivacyPage.retention.text_1">
+                        Die in MediCounter gespeicherten Daten bleiben grunds&auml;tzlich so lange lokal gespeichert, bis sie vom Nutzer innerhalb der App oder durch Entfernen der lokalen Anwendungsdaten gel&ouml;scht werden.
+                    </p>
+                    <p data-i18n="medicounterPrivacyPage.retention.text_2">
+                        Bei einer Deinstallation kann es sein, dass lokale App-Daten je nach Windows-Konfiguration nicht automatisch entfernt werden. Diese k&ouml;nnen dann zus&auml;tzlich manuell &uuml;ber Windows oder den lokalen App-Datenordner gel&ouml;scht werden.
+                    </p>
+                </section>
 
-    <h2>14. &Auml;nderungen dieser Datenschutzerkl&auml;rung</h2>
-    <p>
-      Diese Datenschutzerkl&auml;rung wird angepasst, wenn sich Funktionen, Datenfl&uuml;sse oder technische Rahmenbedingungen von MediCounter &auml;ndern.
-    </p>
-  </main>
+                <section class="legal-section">
+                    <h2 data-i18n="medicounterPrivacyPage.rights.heading">13. Rechte betroffener Personen</h2>
+                    <p data-i18n="medicounterPrivacyPage.rights.text">
+                        Sofern personenbezogene Daten verarbeitet werden, bestehen nach der DSGVO insbesondere folgende Rechte:
+                    </p>
+                    <ul class="legal-list">
+                        <li data-i18n="medicounterPrivacyPage.rights.item_1">Recht auf Auskunft</li>
+                        <li data-i18n="medicounterPrivacyPage.rights.item_2">Recht auf Berichtigung</li>
+                        <li data-i18n="medicounterPrivacyPage.rights.item_3">Recht auf L&ouml;schung</li>
+                        <li data-i18n="medicounterPrivacyPage.rights.item_4">Recht auf Einschr&auml;nkung der Verarbeitung</li>
+                        <li data-i18n="medicounterPrivacyPage.rights.item_5">Recht auf Widerspruch</li>
+                        <li data-i18n="medicounterPrivacyPage.rights.item_6">Recht auf Beschwerde bei einer zust&auml;ndigen Datenschutzaufsichtsbeh&ouml;rde</li>
+                    </ul>
+                </section>
+
+                <section class="legal-section">
+                    <h2 data-i18n="medicounterPrivacyPage.changes.heading">14. &Auml;nderungen dieser Datenschutzerkl&auml;rung</h2>
+                    <p data-i18n="medicounterPrivacyPage.changes.text">
+                        Diese Datenschutzerkl&auml;rung wird angepasst, wenn sich Funktionen, Datenfl&uuml;sse oder technische Rahmenbedingungen von MediCounter &auml;ndern.
+                    </p>
+                </section>
+            </div>
+        </main>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-inner">
+            <p data-i18n="footer.text">&copy; 2026 Jan He&szlig; - Entwickelt mit HTML, CSS &amp; JavaScript</p>
+            <nav class="footer-links" aria-label="Legal navigation" data-i18n-aria-label="footer.legal_nav">
+                <a href="/impressum/" data-i18n="footer.imprint">Impressum</a>
+                <a href="/datenschutz/" data-i18n="footer.privacy">Datenschutz</a>
+            </nav>
+        </div>
+    </footer>
+
+    <button id="backToTop" aria-label="Back to top" data-i18n-aria-label="common.back_to_top">
+        &uarr;
+    </button>
+
+    <script src="/translations.js"></script>
+    <script src="/script.js"></script>
 </body>
 </html>
