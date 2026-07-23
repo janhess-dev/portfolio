@@ -85,6 +85,16 @@ if (btn) {
 if (modal && modalImg) {
     let imageGalleryItems = [];
     let currentGalleryIndex = -1;
+    const galleryCache = new Map();
+
+    const checkImageExists = (src) => {
+        return new Promise((resolve) => {
+            const probe = new Image();
+            probe.onload = () => resolve(true);
+            probe.onerror = () => resolve(false);
+            probe.src = src;
+        });
+    };
 
     const clearImageGallery = () => {
         imageGalleryItems = [];
@@ -154,6 +164,59 @@ if (modal && modalImg) {
         renderImageGallery();
     };
 
+    const resolveGalleryItems = async (launcher) => {
+        const cacheKey = launcher.getAttribute("data-preview-gallery")
+            || [
+                launcher.getAttribute("data-preview-gallery-prefix"),
+                launcher.getAttribute("data-preview-gallery-extension"),
+                launcher.getAttribute("data-preview-gallery-max")
+            ].join("|");
+
+        if (galleryCache.has(cacheKey)) {
+            return galleryCache.get(cacheKey);
+        }
+
+        const altPrefix = launcher.getAttribute("data-preview-gallery-alt-prefix") || "Preview";
+        const staticSources = (launcher.getAttribute("data-preview-gallery") || "")
+            .split(",")
+            .map((value) => value.trim())
+            .filter(Boolean);
+
+        let galleryItems = [];
+
+        if (staticSources.length > 0) {
+            galleryItems = staticSources.map((src, index) => ({
+                src,
+                alt: `${altPrefix} ${index + 1}`
+            }));
+        } else {
+            const prefix = launcher.getAttribute("data-preview-gallery-prefix") || "";
+            const extension = launcher.getAttribute("data-preview-gallery-extension") || "";
+            const max = Number.parseInt(launcher.getAttribute("data-preview-gallery-max") || "0", 10);
+
+            if (prefix && extension && Number.isFinite(max) && max >= 0) {
+                const candidates = Array.from({ length: max + 1 }, (_, index) => ({
+                    src: `${prefix}${index}${extension}`,
+                    alt: `${altPrefix} ${index + 1}`
+                }));
+
+                const checks = await Promise.all(
+                    candidates.map(async (item) => ({
+                        item,
+                        exists: await checkImageExists(item.src)
+                    }))
+                );
+
+                galleryItems = checks
+                    .filter((entry) => entry.exists)
+                    .map((entry) => entry.item);
+            }
+        }
+
+        galleryCache.set(cacheKey, galleryItems);
+        return galleryItems;
+    };
+
     document.querySelectorAll(".zoomable-image").forEach((img) => {
         img.addEventListener("click", () => {
             clearImageGallery();
@@ -173,20 +236,11 @@ if (modal && modalImg) {
         });
     });
 
-    document.querySelectorAll("[data-preview-gallery]").forEach((launcher) => {
-        launcher.addEventListener("click", () => {
-            const sources = (launcher.getAttribute("data-preview-gallery") || "")
-                .split(",")
-                .map((value) => value.trim())
-                .filter(Boolean);
+    document.querySelectorAll("[data-preview-gallery], [data-preview-gallery-prefix]").forEach((launcher) => {
+        launcher.addEventListener("click", async () => {
+            const galleryItems = await resolveGalleryItems(launcher);
 
-            if (sources.length === 0) return;
-
-            const altPrefix = launcher.getAttribute("data-preview-gallery-alt-prefix") || "Preview";
-            const galleryItems = sources.map((src, index) => ({
-                src,
-                alt: `${altPrefix} ${index + 1}`
-            }));
+            if (galleryItems.length === 0) return;
 
             openImageGallery(galleryItems, 0);
         });
