@@ -29,14 +29,14 @@
                         <p class="section-label" data-i18n="medicounterPage.hero.label">Windows App</p>
                         <h1 data-i18n="medicounterPage.hero.title">MediCounter</h1>
                         <p class="project-detail-lead" data-i18n="medicounterPage.hero.lead">
-                            MediCounter is a Windows app for managing medication stock per person. It is built for stock organization, not intake tracking, and keeps data local on the device.
+                            MediCounter is a Windows app for managing medication stock per person. It works offline with local data and offers an optional Connected mode through Cloudflare when cross-device access is needed.
                         </p>
 
                         <div class="project-stack project-stack-detail">
                             <span data-i18n="medicounterPage.hero.stack_csharp">C#</span>
-                            <span data-i18n="medicounterPage.hero.stack_xaml">XAML</span>
                             <span data-i18n="medicounterPage.hero.stack_winui">WinUI 3</span>
-                            <span data-i18n="medicounterPage.hero.stack_dotnet">.NET 8</span>
+                            <span data-i18n="medicounterPage.hero.stack_workers">Cloudflare Workers</span>
+                            <span data-i18n="medicounterPage.hero.stack_d1">Cloudflare D1</span>
                         </div>
 
                         <div class="project-detail-actions">
@@ -64,9 +64,9 @@
                 <section class="project-section">
                     <div class="section-header">
                         <p class="section-label" data-i18n="medicounterPage.overview.label">Product</p>
-                        <h2 data-i18n="medicounterPage.overview.heading">Medication stock management for Windows</h2>
+                        <h2 data-i18n="medicounterPage.overview.heading">Medication stock management, offline or connected</h2>
                         <p class="section-text" data-i18n="medicounterPage.overview.text">
-                            MediCounter organizes existing medication stock per person with a clear interface, local data storage, and no account or cloud requirement.
+                            MediCounter organizes medication stock per person in a clear Windows interface. Offline use keeps data on the device; Connected mode adds online access through a Cloudflare-based backend.
                         </p>
                     </div>
                 </section>
@@ -77,9 +77,9 @@
                         <h3 data-i18n="medicounterPage.description.heading">What MediCounter is</h3>
                         <ul class="detail-list">
                             <li data-i18n="medicounterPage.description.item_1">Medication stock management per person</li>
-                            <li data-i18n="medicounterPage.description.item_2">Built for local desktop use on Windows</li>
-                            <li data-i18n="medicounterPage.description.item_3">Designed to stay simple and readable</li>
-                            <li data-i18n="medicounterPage.description.item_4">Works without an account or cloud connection</li>
+                            <li data-i18n="medicounterPage.description.item_2">Fully usable offline with local storage</li>
+                            <li data-i18n="medicounterPage.description.item_3">Optional Connected mode for online access and synchronization</li>
+                            <li data-i18n="medicounterPage.description.item_4">Designed to remain simple, readable, and practical</li>
                         </ul>
                     </article>
 
@@ -90,7 +90,7 @@
                             <li data-i18n="medicounterPage.limits.item_1">No intake reminders or dose scheduling</li>
                             <li data-i18n="medicounterPage.limits.item_2">No medical recommendations</li>
                             <li data-i18n="medicounterPage.limits.item_3">No diagnosis or treatment guidance</li>
-                            <li data-i18n="medicounterPage.limits.item_4">No automatic online sync</li>
+                            <li data-i18n="medicounterPage.limits.item_4">No cloud transfer unless Connected mode is actively used</li>
                         </ul>
                     </article>
                 </section>
@@ -122,12 +122,12 @@
 
                     <article class="detail-card">
                         <p class="section-label" data-i18n="medicounterPage.data.label">Data & Privacy</p>
-                        <h3 data-i18n="medicounterPage.data.heading">How data is handled</h3>
+                        <h3 data-i18n="medicounterPage.data.heading">Local by default, connected by choice</h3>
                         <ul class="detail-list">
-                            <li data-i18n="medicounterPage.data.item_1">All app data stays local on the PC</li>
-                            <li data-i18n="medicounterPage.data.item_2">No account is required</li>
-                            <li data-i18n="medicounterPage.data.item_3">No cloud is required</li>
-                            <li data-i18n="medicounterPage.data.item_4">The separate privacy policy explains backups, feedback email, and local logs</li>
+                            <li data-i18n="medicounterPage.data.item_1">Offline data remains locally on the Windows device</li>
+                            <li data-i18n="medicounterPage.data.item_2">Connected mode is optional and must be actively configured</li>
+                            <li data-i18n="medicounterPage.data.item_3">Connected content is end-to-end encrypted before it reaches Cloudflare Workers and D1</li>
+                            <li data-i18n="medicounterPage.data.item_4">The encryption key remains on the connected devices and is not stored by Cloudflare</li>
                         </ul>
                         <a href="/medicounter/Datenschutz" class="detail-card-link" data-i18n="medicounterPage.data.link_privacy">Open MediCounter privacy policy</a>
                     </article>
@@ -140,19 +140,19 @@
                         <ul class="detail-list">
                             <li data-i18n="medicounterPage.scope.item_1">Person selection at the start</li>
                             <li data-i18n="medicounterPage.scope.item_2">Managing stock entries in a simple flow</li>
-                            <li data-i18n="medicounterPage.scope.item_3">Clear desktop layout over complex feature depth</li>
-                            <li data-i18n="medicounterPage.scope.item_4">A small local-first tool before broader expansion</li>
+                            <li data-i18n="medicounterPage.scope.item_3">Offline-first operation without a permanent internet connection</li>
+                            <li data-i18n="medicounterPage.scope.item_4">Optional Connected backend using end-to-end encryption, Cloudflare Workers, and D1</li>
                         </ul>
                     </article>
 
                     <article class="detail-card">
                         <p class="section-label" data-i18n="medicounterPage.next_steps.label">Next Steps</p>
-                        <h3 data-i18n="medicounterPage.next_steps.heading">What may be added later</h3>
+                        <h3 data-i18n="medicounterPage.next_steps.heading">How MediCounter can grow</h3>
                         <ul class="detail-list">
-                            <li data-i18n="medicounterPage.next_steps.item_1">More detailed medication entries</li>
-                            <li data-i18n="medicounterPage.next_steps.item_2">Stronger validation and stock rules</li>
-                            <li data-i18n="medicounterPage.next_steps.item_3">Local saving and backup handling</li>
-                            <li data-i18n="medicounterPage.next_steps.item_4">Additional improvements based on user feedback</li>
+                            <li data-i18n="medicounterPage.next_steps.item_1">Expand Connected mode and make synchronization more transparent</li>
+                            <li data-i18n="medicounterPage.next_steps.item_2">Connect a mobile version for stock information while away from the PC</li>
+                            <li data-i18n="medicounterPage.next_steps.item_3">Improve conflict handling, backups, and recovery</li>
+                            <li data-i18n="medicounterPage.next_steps.item_4">Prioritize additional features based on user feedback</li>
                         </ul>
                     </article>
                 </section>
