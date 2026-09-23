@@ -27,12 +27,15 @@
                     <p class="section-text legal-lead" data-i18n="medicounterPrivacyPage.lead">
                         Diese Datenschutzerkl&auml;rung beschreibt, welche personenbezogenen Daten in der Windows-App MediCounter verarbeitet werden, zu welchem Zweck dies geschieht und welche Grenzen die App dabei bewusst einh&auml;lt.
                     </p>
-                    <p class="legal-updated" data-i18n="medicounterPrivacyPage.updated">Stand: 22. September 2026</p>
+                    <p class="legal-updated" data-i18n="medicounterPrivacyPage.updated">Stand: 23. September 2026</p>
                 </section>
 
                 <section class="legal-section">
                     <p class="legal-note" data-i18n="medicounterPrivacyPage.notice">
                         MediCounter dient ausschlie&szlig;lich der Organisation vorhandener Medikamentenbest&auml;nde. Die App bietet keine medizinischen Empfehlungen und ersetzt keine &auml;rztliche oder pharmazeutische Beratung.
+                    </p>
+                    <p class="legal-note" data-i18n="medicounterPrivacyPage.beta_notice">
+                        Connected befindet sich derzeit im Beta-Stadium. Bis die ausdr&uuml;ckliche Einwilligung vor der ersten Cloud-Verbindung und die vollst&auml;ndige Cloud-L&ouml;schung technisch umgesetzt sind, darf Connected nur mit Testdaten verwendet werden.
                     </p>
                 </section>
 
@@ -89,14 +92,14 @@
                 <section class="legal-section">
                     <h2 data-i18n="medicounterPrivacyPage.legal.heading">5. Rechtsgrundlagen</h2>
                     <p data-i18n="medicounterPrivacyPage.legal.text">
-                        Soweit MediCounter personenbezogene Daten zur Bereitstellung der vom Nutzer gew&uuml;nschten App-Funktionen verarbeitet, erfolgt dies auf Grundlage von Art. 6 Abs. 1 lit. b DSGVO. Soweit Bestandsdaten R&uuml;ckschl&uuml;sse auf die Gesundheit einer Person zulassen, erfolgt ihre Verarbeitung im Connected-Modus auf Grundlage einer ausdr&uuml;cklichen Einwilligung nach Art. 6 Abs. 1 lit. a und Art. 9 Abs. 2 lit. a DSGVO. Die Einwilligung kann jederzeit mit Wirkung f&uuml;r die Zukunft widerrufen werden. Technische Diagnosedaten werden auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO verarbeitet.
+                        Soweit MediCounter personenbezogene Daten zur Bereitstellung der vom Nutzer gew&uuml;nschten App-Funktionen verarbeitet, erfolgt dies auf Grundlage von Art. 6 Abs. 1 lit. b DSGVO. Soweit Bestandsdaten R&uuml;ckschl&uuml;sse auf die Gesundheit einer Person zulassen, setzt ihre Verarbeitung im Connected-Modus eine ausdr&uuml;ckliche Einwilligung nach Art. 6 Abs. 1 lit. a und Art. 9 Abs. 2 lit. a DSGVO voraus. Diese Einwilligung muss vor der ersten Cloud-Verbindung eingeholt und mit Version und Zeitpunkt lokal dokumentiert werden. Sie kann jederzeit mit Wirkung f&uuml;r die Zukunft widerrufen werden. Technische Diagnosedaten werden auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO verarbeitet.
                     </p>
                 </section>
 
                 <section class="legal-section">
                     <h2 data-i18n="medicounterPrivacyPage.local.heading">6. Offline-Betrieb und lokale Datenspeicherung</h2>
                     <p data-i18n="medicounterPrivacyPage.local.text_1">
-                        Im Offline-Betrieb speichert MediCounter App-Daten ausschlie&szlig;lich lokal auf dem verwendeten Windows-Ger&auml;t beziehungsweise im zugeh&ouml;rigen Benutzerkonto. Es erfolgt keine automatische Cloud-Synchronisierung.
+                        Im Offline-Betrieb speichert MediCounter App-Daten ausschlie&szlig;lich lokal auf dem jeweiligen Ger&auml;t beziehungsweise im zugeh&ouml;rigen Benutzerprofil. Es erfolgt keine automatische Cloud-Synchronisierung.
                     </p>
                     <p data-i18n="medicounterPrivacyPage.local.text_2">
                         Solange Connected nicht eingerichtet und verwendet wird, &uuml;bertr&auml;gt MediCounter keine Bestands- oder Personendaten an den Connected-Dienst.
@@ -106,10 +109,10 @@
                 <section class="legal-section">
                     <h2 data-i18n="medicounterPrivacyPage.connected.heading">7. Connected-Modus mit Cloudflare Workers und D1</h2>
                     <p data-i18n="medicounterPrivacyPage.connected.text_1">
-                        Connected ist eine freiwillige Online-Funktion; MediCounter bleibt ohne Connected lokal nutzbar. Erst wenn eine Verbindung aktiv eingerichtet oder genutzt wird, sendet die App Anfragen an eine API auf Cloudflare Workers. Der Worker verarbeitet die Verbindungs- und Synchronisierungslogik; die verschl&uuml;sselten Datens&auml;tze werden in Cloudflare D1 gespeichert.
+                        Connected ist eine freiwillige Online-Funktion; MediCounter bleibt ohne Connected lokal nutzbar. Erst wenn eine Verbindung aktiv eingerichtet wird, sendet die App Anfragen an eine API auf Cloudflare Workers. Anschlie&szlig;end synchronisiert die App &Auml;nderungen automatisch, solange Connected aktiv ist. Der Worker verarbeitet die Verbindungs- und Synchronisierungslogik; die verschl&uuml;sselten Datens&auml;tze werden in Cloudflare D1 gespeichert.
                     </p>
                     <p data-i18n="medicounterPrivacyPage.connected.text_2">
-                        Die Bestands- und Personendaten werden vor der &Uuml;bertragung auf dem Endger&auml;t Ende-zu-Ende verschl&uuml;sselt. Der daf&uuml;r verwendete Schl&uuml;ssel bleibt lokal auf den verbundenen Ger&auml;ten und wird weder an Cloudflare noch an den Betreiber &uuml;bermittelt. Workers und D1 verarbeiten beziehungsweise speichern deshalb nur den verschl&uuml;sselten Inhalt. Ohne den lokalen Schl&uuml;ssel kann der Betreiber diesen Inhalt nicht entschl&uuml;sseln oder wiederherstellen.
+                        Die Bestands- und Personendaten werden vor der &Uuml;bertragung auf dem Endger&auml;t Ende-zu-Ende verschl&uuml;sselt. Beim Koppeln wird der Schl&uuml;ssel als zus&auml;tzlich verschl&uuml;sselter Einmal-Payload &uuml;ber Cloudflare an das neue Ger&auml;t transportiert; er wird Cloudflare und dem Betreiber nicht im Klartext bereitgestellt. Au&szlig;erhalb dieses Kopplungsvorgangs bleibt der Schl&uuml;ssel lokal auf den verbundenen Ger&auml;ten. Workers und D1 verarbeiten beziehungsweise speichern nur verschl&uuml;sselte Inhalte. Ohne den lokalen Schl&uuml;ssel kann der Betreiber diese Inhalte nicht entschl&uuml;sseln oder wiederherstellen.
                     </p>
                     <p data-i18n="medicounterPrivacyPage.connected.text_3">
                         Unabh&auml;ngig von der Inhaltsverschl&uuml;sselung fallen f&uuml;r den technischen Betrieb Metadaten an. Dazu k&ouml;nnen Ger&auml;te- und Verbindungskennungen, Sitzungs- und Sicherheitsinformationen, IP-Adresse, Anfragezeitpunkte sowie technische Fehlerdaten geh&ouml;ren. Cloudflare verarbeitet diese Daten als technischer Dienstleister und Auftragsverarbeiter. D1 verschl&uuml;sselt gespeicherte Daten nach Angaben von Cloudflare zus&auml;tzlich bei der Speicherung und bei der &Uuml;bertragung innerhalb der Cloudflare-Infrastruktur.
@@ -141,7 +144,7 @@
                 <section class="legal-section">
                     <h2 data-i18n="medicounterPrivacyPage.feedback.heading">9. Feedback per E-Mail</h2>
                     <p data-i18n="medicounterPrivacyPage.feedback.text_1">
-                        Die Feedbackfunktion &ouml;ffnet das auf dem Ger&auml;t eingerichtete E-Mail-Programm und bereitet eine Nachricht an den Entwickler vor. Automatisch eingef&uuml;gt werden ausschlie&szlig;lich technische Angaben wie die MediCounter-Version und die vom Betriebssystem gemeldete Windows-Version.
+                        Die Feedbackfunktion &ouml;ffnet das auf dem Ger&auml;t eingerichtete E-Mail-Programm und bereitet eine Nachricht an den Entwickler vor. Je nach Plattform k&ouml;nnen technische Angaben wie die MediCounter-Version und die Betriebssystemversion automatisch eingef&uuml;gt werden.
                     </p>
                     <p data-i18n="medicounterPrivacyPage.feedback.text_2">
                         Personen- oder Bestandsdaten werden dabei nicht automatisch eingef&uuml;gt. Eine &Uuml;bermittlung erfolgt erst, wenn der Nutzer die E-Mail selbst absendet. Ab diesem Zeitpunkt erfolgt die Verarbeitung &uuml;ber den jeweils genutzten E-Mail-Anbieter.
@@ -162,31 +165,51 @@
                 </section>
 
                 <section class="legal-section">
-                    <h2 data-i18n="medicounterPrivacyPage.backups.heading">11. Backups und Exporte</h2>
+                    <h2 data-i18n="medicounterPrivacyPage.permissions.heading">11. Ger&auml;teberechtigungen</h2>
+                    <p data-i18n="medicounterPrivacyPage.permissions.text">
+                        Je nach Plattform und genutzter Funktion kann MediCounter folgende Berechtigungen anfordern:
+                    </p>
+                    <ul class="legal-list">
+                        <li data-i18n="medicounterPrivacyPage.permissions.item_1">Kamera: ausschlie&szlig;lich zum Scannen von QR-Codes beim Koppeln von Ger&auml;ten</li>
+                        <li data-i18n="medicounterPrivacyPage.permissions.item_2">Benachrichtigungen: zur Anzeige lokaler Bestandswarnungen</li>
+                        <li data-i18n="medicounterPrivacyPage.permissions.item_3">Start nach Ger&auml;teneustart: zur Wiederherstellung zuvor eingerichteter lokaler Warnungen</li>
+                        <li data-i18n="medicounterPrivacyPage.permissions.item_4">Netzwerkzugriff: f&uuml;r Connected, Synchronisierung und das &Ouml;ffnen externer Links</li>
+                    </ul>
+                </section>
+
+                <section class="legal-section">
+                    <h2 data-i18n="medicounterPrivacyPage.other_people.heading">12. Daten anderer Personen</h2>
+                    <p data-i18n="medicounterPrivacyPage.other_people.text">
+                        MediCounter erm&ouml;glicht Profile f&uuml;r Familienmitglieder oder andere Personen. Nutzer d&uuml;rfen solche Daten nur eintragen und &uuml;ber Connected synchronisieren, wenn sie dazu berechtigt sind und die betroffene Person erforderlichenfalls informiert wurde oder eingewilligt hat.
+                    </p>
+                </section>
+
+                <section class="legal-section">
+                    <h2 data-i18n="medicounterPrivacyPage.backups.heading">13. Backups und Exporte</h2>
                     <p data-i18n="medicounterPrivacyPage.backups.text">
                         Wenn Nutzer Backups oder Exporte erstellen, k&ouml;nnen diese Dateien personenbezogene oder gesundheitsbezogene Inhalte enthalten. F&uuml;r die sichere Aufbewahrung, Weitergabe und L&ouml;schung solcher Dateien ist der Nutzer selbst verantwortlich.
                     </p>
                 </section>
 
                 <section class="legal-section">
-                    <h2 data-i18n="medicounterPrivacyPage.external.heading">12. Externe Dienste</h2>
+                    <h2 data-i18n="medicounterPrivacyPage.external.heading">14. Externe Dienste</h2>
                     <p data-i18n="medicounterPrivacyPage.external.text">
                         Soweit MediCounter externe Seiten oder Dienste &ouml;ffnet, etwa eine PayPal-Seite zur freiwilligen Unterst&uuml;tzung, gelten ab diesem Zeitpunkt die Datenschutzbestimmungen des jeweiligen Drittanbieters.
                     </p>
                 </section>
 
                 <section class="legal-section">
-                    <h2 data-i18n="medicounterPrivacyPage.retention.heading">13. Speicherdauer und L&ouml;schung</h2>
+                    <h2 data-i18n="medicounterPrivacyPage.retention.heading">15. Speicherdauer und L&ouml;schung</h2>
                     <p data-i18n="medicounterPrivacyPage.retention.text_1">
                         Die in MediCounter gespeicherten Daten bleiben grunds&auml;tzlich so lange lokal gespeichert, bis sie vom Nutzer innerhalb der App oder durch Entfernen der lokalen Anwendungsdaten gel&ouml;scht werden.
                     </p>
                     <p data-i18n="medicounterPrivacyPage.retention.text_2">
-                        Verschl&uuml;sselte Connected-Daten werden in D1 nur so lange gespeichert, wie sie f&uuml;r die aktive Verbindung und Synchronisierung ben&ouml;tigt werden. Eine L&ouml;schung kann &uuml;ber die bereitgestellten App-Funktionen oder unter Angabe der Connected-Kennung per E-Mail an den Verantwortlichen verlangt werden. D1 verf&uuml;gt &uuml;ber eine automatische Wiederherstellungsfunktion (Time Travel), durch die gel&ouml;schte oder ge&auml;nderte Datenbankst&auml;nde je nach Cloudflare-Tarif noch bis zu 7 beziehungsweise 30 Tage wiederherstellbar sein k&ouml;nnen. Lokale App-Daten und lokal gespeicherte Schl&uuml;ssel m&uuml;ssen auf den jeweiligen Ger&auml;ten separat gel&ouml;scht werden.
+                        Verschl&uuml;sselte Connected-Daten werden in D1 nur so lange gespeichert, wie sie f&uuml;r die aktive Verbindung und Synchronisierung ben&ouml;tigt werden. Bis eine vollst&auml;ndige Cloud-L&ouml;schung in der App verf&uuml;gbar ist, kann sie unter Angabe der Connected-Kennung per E-Mail an den Verantwortlichen verlangt werden. Das blo&szlig;e Entfernen eines Ger&auml;ts oder lokaler Zugangsdaten l&ouml;scht den Cloud-Haushalt nicht. D1 verf&uuml;gt &uuml;ber eine automatische Wiederherstellungsfunktion (Time Travel), durch die gel&ouml;schte oder ge&auml;nderte Datenbankst&auml;nde je nach Cloudflare-Tarif noch bis zu 7 beziehungsweise 30 Tage wiederherstellbar sein k&ouml;nnen. Lokale App-Daten und lokal gespeicherte Schl&uuml;ssel m&uuml;ssen auf den jeweiligen Ger&auml;ten separat gel&ouml;scht werden.
                     </p>
                 </section>
 
                 <section class="legal-section">
-                    <h2 data-i18n="medicounterPrivacyPage.rights.heading">14. Rechte betroffener Personen</h2>
+                    <h2 data-i18n="medicounterPrivacyPage.rights.heading">16. Rechte betroffener Personen</h2>
                     <p data-i18n="medicounterPrivacyPage.rights.text">
                         Sofern personenbezogene Daten verarbeitet werden, bestehen nach der DSGVO insbesondere folgende Rechte:
                     </p>
@@ -201,7 +224,7 @@
                 </section>
 
                 <section class="legal-section">
-                    <h2 data-i18n="medicounterPrivacyPage.changes.heading">15. &Auml;nderungen dieser Datenschutzerkl&auml;rung</h2>
+                    <h2 data-i18n="medicounterPrivacyPage.changes.heading">17. &Auml;nderungen dieser Datenschutzerkl&auml;rung</h2>
                     <p data-i18n="medicounterPrivacyPage.changes.text">
                         Diese Datenschutzerkl&auml;rung wird angepasst, wenn sich Funktionen, Datenfl&uuml;sse oder technische Rahmenbedingungen von MediCounter &auml;ndern.
                     </p>
